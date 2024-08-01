@@ -1,4 +1,5 @@
-# General Purpose Nix Config for macOS + NixOS
+
+# (JL's modified) General Purpose Nix Config for macOS + NixOS
 [![Build Starter Template](https://github.com/dustinlyons/nixos-config/actions/workflows/build.yml/badge.svg)](https://github.com/dustinlyons/nixos-config/actions/workflows/build.yml)
 [![Statix Lint](https://github.com/dustinlyons/nixos-config/actions/workflows/lint.yml/badge.svg)](https://github.com/dustinlyons/nixos-config/actions/workflows/lint.yml)
 
@@ -168,14 +169,14 @@ After installation, open a new terminal session to make the `nix` executable ava
 * You can always add secrets later.
 
 ```sh
-mkdir -p nixos-config && cd nixos-config && nix flake --extra-experimental-features 'nix-command flakes' init -t github:dustinlyons/nixos-config#starter
+mkdir -p nix-config && cd nix-config && nix flake --extra-experimental-features 'nix-command flakes' init -t github:b4lisong/nix-config#starter
 ```
 **Full version with secrets management**
 * Choose this to add more moving parts for a 100% declarative configuration.
 * This template offers you a place to keep passwords, private keys, etc. *as part of your configuration*.
 
 ```sh
-mkdir -p nixos-config && cd nixos-config && nix flake --extra-experimental-features 'nix-command flakes' init -t github:dustinlyons/nixos-config#starter-with-secrets
+mkdir -p nixos-config && cd nixos-config && nix flake --extra-experimental-features 'nix-command flakes' init -t github:b4lisong/nix-config#starter-with-secrets
 ```
 
 ### 4. Make [apps](https://github.com/dustinlyons/nixos-config/tree/main/apps) executable
