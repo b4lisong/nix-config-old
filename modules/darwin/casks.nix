@@ -10,6 +10,7 @@ _:
   #"visual-studio-code"
 
   # Communication Tools
+  "superhuman"
   "discord"
   #"notion"
   "slack"
