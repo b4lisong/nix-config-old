@@ -75,6 +75,7 @@ in
       enable = true;
       entries = [
         { path = "/Applications/Slack.app/"; }
+        { path = "/Applications/Superhuman.app/"; }
         { path = "/System/Applications/Messages.app/"; }
         { path = "${pkgs.alacritty}/Applications/Alacritty.app/"; }
         { path = "/Applications/1Password.app/"; }
