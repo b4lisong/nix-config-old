@@ -62,8 +62,6 @@ in
         stateVersion = "23.11";
       };
       programs = {} // import ../shared/home-manager.nix { inherit config pkgs lib; };
-      # kitty single-instance launch (for new OS windows)
-      programs.kitty.darwinLaunchOptions = [ "--single-instance" ];
 
       # Marked broken Oct 20, 2022 check later to remove this
       # https://github.com/nix-community/home-manager/issues/3344
