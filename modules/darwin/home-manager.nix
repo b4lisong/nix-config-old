@@ -96,4 +96,7 @@ in
       ];
     };
   };
+
+  # kitty single-instance launch (for new OS windows)
+  kitty.darwinLaunchOptions = [ "--single-instance" ];
 }
