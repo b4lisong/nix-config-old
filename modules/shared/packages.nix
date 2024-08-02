@@ -2,7 +2,6 @@
 
 with pkgs; [
   # General packages for development and system management
-  alacritty
   aspell
   aspellDicts.en
   bash-completion
@@ -10,6 +9,7 @@ with pkgs; [
   btop
   coreutils
   killall
+  kitty
   lazygit
   neofetch
   openssh
