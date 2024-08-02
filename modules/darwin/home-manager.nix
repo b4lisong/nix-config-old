@@ -77,7 +77,7 @@ in
         { path = "/Applications/Slack.app/"; }
         { path = "/Applications/Superhuman.app/"; }
         { path = "/System/Applications/Messages.app/"; }
-        { path = "${pkgs.alacritty}/Applications/Kitty.app/"; }
+        { path = "${pkgs.kitty}/Applications/kitty.app/"; }
         { path = "/Applications/1Password.app/"; }
         {
           path = toString myEmacsLauncher;
