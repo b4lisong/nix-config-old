@@ -77,8 +77,8 @@ let name = "JL Mitra";
   git = {
     enable = true;
     ignores = [ "*.swp" ];
-    userName = name;
-    userEmail = email;
+    userName = "b4lisong";
+    userEmail = "5397809+b4lisong@users.noreply.github.com";
     lfs = {
       enable = true;
     };
@@ -88,7 +88,11 @@ let name = "JL Mitra";
 	    editor = "vim";
         autocrlf = "input";
       };
+      # Sign all commits using ssh key
+      # ref: https://jeppesen.io/git-commit-sign-nix-home-manager-ssh/
       commit.gpgsign = true;
+      gpg.format = "ssh";
+      user.signingkey = "~/.ssh/id_ed25519.pub";
       pull.rebase = true;
       rebase.autoStash = true;
     };
@@ -230,13 +234,15 @@ let name = "JL Mitra";
         ];
       };
 
-      dynamic_padding = true;
-      decorations = "full";
-      title = "Terminal";
-      class = {
-        instance = "Alacritty";
-        general = "Alacritty";
-      };
+      # TODO: remove from shared and place in nix-os
+      #dynamic_padding = true; # not working in macOS?
+      #decorations = "full"; # not working in macOS?
+      #title = "Terminal"; # not working in macOS?
+      # not working in macOS?
+      #class = {
+      #  instance = "Alacritty";
+      #  general = "Alacritty";
+      #};
 
       colors = {
         primary = {
