@@ -41,15 +41,10 @@ let name = "JL Mitra";
       # Ripgrep alias
       alias search=rg -p --glob '!node_modules/*'  $@
 
-      # Emacs is my editor
+      # vim is my editor
       export ALTERNATE_EDITOR=""
-      #export EDITOR="emacsclient -t"
       #export VISUAL="emacsclient -c -a emacs"
       export EDITOR="vim"
-
-      e() {
-          emacsclient -t "$@"
-      }
 
       # nix shortcuts
       shell() {
