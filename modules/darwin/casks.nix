@@ -6,7 +6,7 @@ _:
   "1password-cli"
 
   # Development Tools
-  #"homebrew/cask/docker"
+  "homebrew/cask/docker"
   #"visual-studio-code"
 
   # Communication Tools
@@ -24,7 +24,7 @@ _:
   #"vlc"
 
   # Productivity Tools
-  #"raycast"
+  "raycast"
 
   # Browsers
   "google-chrome"
