@@ -1,6 +1,10 @@
 _:
 
 [
+  # Password Managers
+  "1password"
+  "1password-cli"
+
   # Development Tools
   #"homebrew/cask/docker"
   #"visual-studio-code"
