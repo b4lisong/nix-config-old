@@ -176,7 +176,7 @@ mkdir -p nix-config && cd nix-config && nix flake --extra-experimental-features 
 * This template offers you a place to keep passwords, private keys, etc. *as part of your configuration*.
 
 ```sh
-mkdir -p nixos-config && cd nixos-config && nix flake --extra-experimental-features 'nix-command flakes' init -t github:b4lisong/nix-config#starter-with-secrets
+mkdir -p nix-config && cd nix-config && nix flake --extra-experimental-features 'nix-command flakes' init -t github:b4lisong/nix-config#starter-with-secrets
 ```
 
 ### 4. Make [apps](https://github.com/dustinlyons/nixos-config/tree/main/apps) executable
