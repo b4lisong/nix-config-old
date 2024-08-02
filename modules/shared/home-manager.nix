@@ -164,6 +164,14 @@ let name = "JL Mitra";
       filetype plugin on
       filetype indent on
 
+      "" : -> ;
+      noremap ; :
+
+      "" jk -> esc in insert & visual mode
+      inoremap jk <esc>
+      vnoremap jk <esc>
+      cnoremap jk <C-C>
+
       "" Paste from clipboard
       nnoremap <Leader>, "+gP
 
@@ -217,6 +225,17 @@ let name = "JL Mitra";
     };
     theme = "Catppuccin-Mocha";
   };   
+
+  starship = {
+    enable = true;
+    interactiveOnly = true;
+    settings = {
+      character = {
+        success_symbol = "[›](bold green)";
+        error_symbol = "[›](bold red)";
+      };
+    };
+  };
 
   ssh = {
     enable = true;
