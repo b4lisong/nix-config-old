@@ -228,7 +228,6 @@ let name = "JL Mitra";
 
   starship = {
     enable = true;
-    interactiveOnly = true;
     settings = {
       character = {
         success_symbol = "[›](bold green)";
