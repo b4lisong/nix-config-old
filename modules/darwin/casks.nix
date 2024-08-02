@@ -2,7 +2,7 @@ _:
 
 [
   # Password Managers
-  "1password"
+  "1password@beta"
   "1password-cli"
 
   # Development Tools
