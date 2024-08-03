@@ -81,6 +81,12 @@ let user = "balisong"; in
         Clicking = true;
         TrackpadThreeFingerDrag = true;
       };
+
+      CustomUserPreferences = {
+        NSGlobalDomain = {
+          WebKitDeveloperExtras = true;
+        };
+      };
     };
   };
 }
