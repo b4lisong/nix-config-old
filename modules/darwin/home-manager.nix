@@ -68,6 +68,17 @@ in
   local = { 
     dock = {
       enable = true;
+      # auto show and hide dock
+      autohide = true;
+      # remove delay for showing dock
+      autohide-delay = 0.0;
+      # Animation durations
+      autohide-time-modifier = 0.2;
+      expose-animation-duration = 0.2;
+      # Don't show recents
+      show-recents = false;
+      # Show process indicators
+      show-process-indicators = true;
       entries = [
         { path = "/Applications/Slack.app/"; }
         { path = "/Applications/Superhuman.app/"; }
