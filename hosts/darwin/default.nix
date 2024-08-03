@@ -121,6 +121,7 @@ let user = "balisong"; in
         location = "~/Desktop";
         type = "png";
       };
+      # TODO: enable these settings elsewhere
       #"com.apple.Safari" = {
       #  # Privacy: don’t send search queries to Apple
       #  UniversalSearchEnabled = false;
