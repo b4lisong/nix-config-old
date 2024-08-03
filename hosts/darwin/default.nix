@@ -59,6 +59,12 @@ let user = "balisong"; in
         "com.apple.sound.beep.volume" = 0.0;
         "com.apple.sound.beep.feedback" = 0;
       };
+      
+      # Show specific text as a greeting at login
+      loginwindow.LoginwindowText = "おかえり、お兄ちゃん";
+
+      # Only ask for screensaver password if longer than 10 sec
+      screensaver.askForPasswordDelay = 10;
 
       dock = {
         autohide = true;
@@ -71,10 +77,15 @@ let user = "balisong"; in
         launchanim = true;
         orientation = "bottom";
         tilesize = 48;
+        mru-spaces = false;
       };
 
       finder = {
         _FXShowPosixPathInTitle = false;
+        # Finder shows all file extensions
+        AppleShowAllExtensions = true;
+        # Default Finder view is columns
+        FXPreferredViewStyle = "clmv";
       };
 
       trackpad = {
