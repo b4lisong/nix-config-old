@@ -69,9 +69,12 @@ in
     dock = {
       enable = true;
       entries = [
+        { path = "/System/Applications/Messages.app/"; }
         { path = "/Applications/Slack.app/"; }
         { path = "/Applications/Superhuman.app/"; }
-        { path = "/System/Applications/Messages.app/"; }
+        { path = "/Applications/Todoist.app/"; }
+        { path = "/Applications/Sunsama.app/"; }
+        { path = "/Applications/Logseq.app/"; }
         { path = "${pkgs.kitty}/Applications/kitty.app/"; }
         { path = "/Applications/1Password.app/"; }
         #{
