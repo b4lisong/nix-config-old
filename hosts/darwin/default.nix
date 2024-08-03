@@ -61,7 +61,12 @@ let user = "balisong"; in
       };
 
       dock = {
-        autohide = false;
+        autohide = true;
+        autohide-delay = 0.0;
+        autohide-time-modifier = 0.2;
+        expose-animation-duration = 0.2;
+        show-hidden = true;
+        show-process-indicators = true;
         show-recents = false;
         launchanim = true;
         orientation = "bottom";
