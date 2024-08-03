@@ -12,7 +12,6 @@ _:
   # Communication Tools
   "superhuman"
   "discord"
-  #"notion"
   "slack"
   "telegram"
   "zoom"
@@ -25,6 +24,9 @@ _:
 
   # Productivity Tools
   "raycast"
+  "todoist"
+  "logseq"
+  "sunsama"
 
   # Browsers
   "google-chrome"
