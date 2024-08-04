@@ -61,6 +61,4 @@ with pkgs; [
   python39Packages.virtualenv # globally install virtualenv
 
   # Networking
-  tailscale
-  tailscalesd
 ]
