@@ -62,4 +62,5 @@ with pkgs; [
 
   # Networking
   tailscale
+  tailscalesd
 ]
