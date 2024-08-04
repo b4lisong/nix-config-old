@@ -30,4 +30,7 @@ _:
 
   # Browsers
   "google-chrome"
+
+  # Security
+  "little-snitch"
 ]
