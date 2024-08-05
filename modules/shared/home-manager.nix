@@ -226,6 +226,7 @@ let name = "JL Mitra";
     settings = {
       background_opacity = "0.9";
       background_tint = "0.9";
+      background_blur = 10;
       dim_opacity = "1.0";
       tab_bar_edge = "bottom";
       tab_bar_margin_width = "20.0";
