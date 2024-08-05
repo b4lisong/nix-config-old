@@ -232,10 +232,19 @@ let name = "JL Mitra";
   starship = {
     enable = true;
     settings = {
+      add_newline = false;
       character = {
-        success_symbol = "[›](bold green)";
-        error_symbol = "[›](bold red)";
+        success_symbol = "[#](bold green)";
+        error_symbol = "[X](bold red)";
+        vicmd_symbol = "[V](bold green)";
       };
+      git_commit = {
+        commit_hash_length = 7;
+        tag_disabled = false;
+        only_detached = false;
+      };
+      git_status.disabled = false;
+      directory.read_only = "(read only)";
     };
   };
 
