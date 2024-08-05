@@ -36,4 +36,5 @@ _:
 
   # Networking
   "tailscale"
+  "protonvpn"
 ]
