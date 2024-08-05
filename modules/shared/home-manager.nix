@@ -241,6 +241,11 @@ let name = "JL Mitra";
       active_tab_title_template = "none";
       scrollback_lines = 10000;
       enable_audio_bell = false;
+      window_margin_width = 0;
+      window_padding_width = 20;
+      remember_window_size = true;
+      placement_strategy = "center";
+      confirm_os_window_close = -1;
     };
   };   
 
