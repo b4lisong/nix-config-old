@@ -33,4 +33,7 @@ _:
 
   # Security
   "little-snitch"
+
+  # Networking
+  "tailscale"
 ]
