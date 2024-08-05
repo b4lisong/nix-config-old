@@ -224,8 +224,8 @@ let name = "JL Mitra";
       "f1" = "show_kitty_env_vars";
     };
     settings = {
-      background_opacity = "0.8";
-      background_tint = "0.8";
+      background_opacity = "0.9";
+      background_tint = "0.9";
       dim_opacity = "1.0";
       tab_bar_edge = "bottom";
       tab_bar_margin_width = "20.0";
