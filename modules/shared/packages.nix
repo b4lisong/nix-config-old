@@ -12,6 +12,7 @@ with pkgs; [
   kitty
   lazygit
   neofetch
+  nnn
   openssh
   sqlite
   wget
