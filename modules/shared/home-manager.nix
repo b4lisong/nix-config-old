@@ -224,11 +224,11 @@ let name = "JL Mitra";
       "f1" = "show_kitty_env_vars";
     };
     settings = {
-      background_opacity = 0.8;
-      background_tint = 0.8;
-      dim_opacity = 1.0;
+      background_opacity = "0.8";
+      background_tint = "0.8";
+      dim_opacity = "1.0";
       tab_bar_edge = "bottom";
-      tab_bar_margin_width = 20.0;
+      tab_bar_margin_width = "20.0";
       tab_bar_margin_height = "20.0 0.0";
       tab_bar_style = "powerline";
       tab_bar_align = "left";
