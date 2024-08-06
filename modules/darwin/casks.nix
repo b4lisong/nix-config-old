@@ -37,6 +37,7 @@ _:
   # Networking
   "tailscale"
   "protonvpn"
+  "tunnelblick"
 
   # Virtualization
   # "utm" # use nix package
