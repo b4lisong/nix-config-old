@@ -1,38 +1,40 @@
 _:
 
 [
+  # Password Managers
+  "1password@beta"
+  "1password-cli"
+
   # Development Tools
   "homebrew/cask/docker"
-  "insomnia"
-  "tableplus"
-  "ngrok"
-  "postico"
-  "visual-studio-code"
-  "wireshark"
+  #"visual-studio-code"
 
   # Communication Tools
+  "superhuman"
   "discord"
-  "loom"
-  "notion"
   "slack"
   "telegram"
   "zoom"
 
   # Utility Tools
-  "appcleaner"
-  "syncthing"
+  #"syncthing"
 
   # Entertainment Tools
-  "steam"
-  "vlc"
+  #"vlc"
 
   # Productivity Tools
   "raycast"
-  "asana"
+  "todoist"
+  "logseq"
+  "sunsama"
 
   # Browsers
   "google-chrome"
 
-  # AI
-  "diffusionbee"
+  # Security
+  "little-snitch"
+
+  # Networking
+  "tailscale"
+  "protonvpn"
 ]

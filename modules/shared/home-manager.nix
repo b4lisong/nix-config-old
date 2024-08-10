@@ -1,88 +1,79 @@
 { config, pkgs, lib, ... }:
 
-let name = "Dustin Lyons";
-    user = "dustin";
-    email = "dustin@dlyons.dev"; in
+let name = "JL Mitra";
+    user = "balisong";
+    email = "b4lisong@pm.me"; in
 {
-
-  direnv = {
-      enable = true;
-      enableZshIntegration = true;
-      nix-direnv.enable = true;
-    };
-
+  # Shared shell configuration
   zsh = {
     enable = true;
-    autocd = false;
-    cdpath = [ "~/.local/share/src" ];
-    plugins = [
-      {
-          name = "powerlevel10k";
-          src = pkgs.zsh-powerlevel10k;
-          file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-      }
-      {
-          name = "powerlevel10k-config";
-          src = lib.cleanSource ./config;
-          file = "p10k.zsh";
-      }
-    ];
+    enableCompletion = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+    #autocd = false;
+    #cdpath = [ "~/.local/share/src" ];
+    #plugins = [
+    #  {
+    #      name = "powerlevel10k";
+    #      src = pkgs.zsh-powerlevel10k;
+    #      file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+    #  }
+    #  {
+    #      name = "powerlevel10k-config";
+    #      src = lib.cleanSource ./config;
+    #      file = "p10k.zsh";
+    #  }
+    #];
     initExtraFirst = ''
       if [[ -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]]; then
         . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
         . /nix/var/nix/profiles/default/etc/profile.d/nix.sh
       fi
 
-      if [[ "$(uname)" == "Linux" ]]; then
-        alias pbcopy='xclip -selection clipboard'
-      fi
-
       # Define variables for directories
       export PATH=$HOME/.pnpm-packages/bin:$HOME/.pnpm-packages:$PATH
       export PATH=$HOME/.npm-packages/bin:$HOME/bin:$PATH
-      export PATH=$HOME/.composer/vendor/bin:$PATH
       export PATH=$HOME/.local/share/bin:$PATH
-
-      export PNPM_HOME=~/.pnpm-packages
-      alias pn=pnpm
-      alias px=pnpx
 
       # Remove history data we don't want to see
       export HISTIGNORE="pwd:ls:cd"
 
       # Ripgrep alias
-      alias search='rg -p --glob "!node_modules/*" --glob "!vendor/*" "$@"'
+      alias search=rg -p --glob '!node_modules/*'  $@
 
-      # Emacs is my editor
+      # vim is my editor
       export ALTERNATE_EDITOR=""
-      export EDITOR="emacsclient -t"
-      export VISUAL="emacsclient -c -a emacs"
-      e() {
-          emacsclient -t "$@"
+      #export VISUAL="emacsclient -c -a emacs"
+      export EDITOR="vim"
+
+      # nix shortcuts
+      shell() {
+          nix-shell '<nixpkgs>' -A "$1"
       }
 
-      # Laravel Artisan
-      alias art='php artisan'
-
-      # PHP Deployer
-      alias deploy='dep deploy'
+      # pnpm is a javascript package manager
+      alias pn=pnpm
+      alias px=pnpx
 
       # Use difftastic, syntax-aware diffing
       alias diff=difft
 
       # Always color ls and group directories
       alias ls='ls --color=auto'
-
-      # Reboot into my dual boot Windows partition
-      alias windows='systemctl reboot --boot-loader-entry=auto-windows'
+      alias ll='ls -lh'
+      alias la='ls -alh'
+      alias g='git'
+      alias gs='git status';
+      alias gp='git push';
+      alias lg='lazygit';
     '';
   };
 
   git = {
     enable = true;
     ignores = [ "*.swp" ];
-    userName = name;
-    userEmail = email;
+    userName = "b4lisong";
+    userEmail = "5397809+b4lisong@users.noreply.github.com";
     lfs = {
       enable = true;
     };
@@ -92,7 +83,11 @@ let name = "Dustin Lyons";
 	    editor = "vim";
         autocrlf = "input";
       };
+      # Sign all commits using ssh key
+      # ref: https://jeppesen.io/git-commit-sign-nix-home-manager-ssh/
       commit.gpgsign = true;
+      gpg.format = "ssh";
+      user.signingkey = "~/.ssh/id_ed25519.pub";
       pull.rebase = true;
       rebase.autoStash = true;
     };
@@ -100,7 +95,7 @@ let name = "Dustin Lyons";
 
   vim = {
     enable = true;
-    plugins = with pkgs.vimPlugins; [ vim-airline vim-airline-themes copilot-vim vim-startify vim-tmux-navigator ];
+    plugins = with pkgs.vimPlugins; [ vim-airline vim-airline-themes vim-startify vim-tmux-navigator ];
     settings = { ignorecase = true; };
     extraConfig = ''
       "" General
@@ -164,6 +159,14 @@ let name = "Dustin Lyons";
       filetype plugin on
       filetype indent on
 
+      "" : -> ;
+      noremap ; :
+
+      "" jk -> esc in insert & visual mode
+      inoremap jk <esc>
+      vnoremap jk <esc>
+      cnoremap jk <C-C>
+
       "" Paste from clipboard
       nnoremap <Leader>, "+gP
 
@@ -208,59 +211,30 @@ let name = "Dustin Lyons";
       '';
      };
 
-  alacritty = {
+  kitty = {
+    enable = true;
+    shellIntegration.enableZshIntegration = true;
+    darwinLaunchOptions = [ "--single-instance" ]; # does this break non-darwin?
+    font = {
+      name = "MesloLGS NF";
+      size = 11;
+    };
+    theme = "Catppuccin-Mocha";
+    keybindings = {
+      "f1" = "show_kitty_env_vars";
+    };
+    settings = {
+      scrollback_lines = 10000;
+      enable_audio_bell = false;
+    };
+  };   
+
+  starship = {
     enable = true;
     settings = {
-      cursor = {
-        style = "Block";
-      };
-
-      window = {
-        opacity = 1.0;
-        padding = {
-          x = 24;
-          y = 24;
-        };
-      };
-
-      font = {
-        normal = {
-          family = "MesloLGS NF";
-          style = "Regular";
-        };
-        size = lib.mkMerge [
-          (lib.mkIf pkgs.stdenv.hostPlatform.isLinux 10)
-          (lib.mkIf pkgs.stdenv.hostPlatform.isDarwin 14)
-        ];
-      };
-
-      colors = {
-        primary = {
-          background = "0x1f2528";
-          foreground = "0xc0c5ce";
-        };
-
-        normal = {
-          black = "0x1f2528";
-          red = "0xec5f67";
-          green = "0x99c794";
-          yellow = "0xfac863";
-          blue = "0x6699cc";
-          magenta = "0xc594c5";
-          cyan = "0x5fb3b3";
-          white = "0xc0c5ce";
-        };
-
-        bright = {
-          black = "0x65737e";
-          red = "0xec5f67";
-          green = "0x99c794";
-          yellow = "0xfac863";
-          blue = "0x6699cc";
-          magenta = "0xc594c5";
-          cyan = "0x5fb3b3";
-          white = "0xd8dee9";
-        };
+      character = {
+        success_symbol = "[›](bold green)";
+        error_symbol = "[›](bold red)";
       };
     };
   };
@@ -309,7 +283,7 @@ let name = "Dustin Lyons";
         # Use XDG data directory
         # https://github.com/tmux-plugins/tmux-resurrect/issues/348
         extraConfig = ''
-          set -g @resurrect-dir '/Users/dustin/.cache/tmux/resurrect'
+          set -g @resurrect-dir '$HOME/.cache/tmux/resurrect'
           set -g @resurrect-capture-pane-contents 'on'
           set -g @resurrect-pane-contents-area 'visible'
         '';

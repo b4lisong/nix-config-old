@@ -64,6 +64,8 @@ in
             else
               echo >&2 "Dock setup complete."
             fi
+            echo >&2 "Telling the OS to check for new settings..."
+            /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
           '';
         }
       );
