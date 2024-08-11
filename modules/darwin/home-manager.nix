@@ -29,7 +29,6 @@ in
     casks = pkgs.callPackage ./casks.nix {};
     taps = [
       "homebrew/cask"
-      "nikitabobko/tap/aerospace"
     ];
 
     # These app IDs are from using the mas CLI app

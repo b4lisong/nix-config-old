@@ -39,6 +39,9 @@ _:
   "protonvpn"
   "tunnelblick"
 
+  # WM/rice
+  "nikitabobko/tap/aerospace"
+
   # Virtualization
   # "utm" # use nix package
 ]
