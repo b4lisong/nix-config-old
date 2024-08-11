@@ -26,11 +26,11 @@ in
       cleanup = "zap";
       upgrade = true;
     };
-    casks = pkgs.callPackage ./casks.nix {};
     taps = [
       "homebrew/cask"
+      "nikitabobko/tap/aerospace"
     ];
-
+    casks = pkgs.callPackage ./casks.nix {};
     # These app IDs are from using the mas CLI app
     # mas = mac app store
     # https://github.com/mas-cli/mas
