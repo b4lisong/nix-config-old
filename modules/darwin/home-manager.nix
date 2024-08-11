@@ -24,6 +24,11 @@ in
     casks = pkgs.callPackage ./casks.nix {};
     taps = [
       "homebrew/cask"
+      {
+        name = "nikitabobko/aerospace";
+        clone_target = "https://github.com/nikitabobko/AeroSpace.git";
+        force_auto_update = true;
+      }
     ];
     onActivation.cleanup = "uninstall";
 
