@@ -40,7 +40,7 @@ _:
   "tunnelblick"
 
   # WM/rice
-  "nikitabobko/tap/aerospace"
+  #"nikitabobko/tap/aerospace" # removing for now
 
   # Virtualization
   # "utm" # use nix package
