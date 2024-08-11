@@ -22,6 +22,9 @@ in
   homebrew = {
     enable = true;
     casks = pkgs.callPackage ./casks.nix {};
+    taps = [
+      "homebrew/cask"
+    ];
     onActivation.cleanup = "uninstall";
 
     # These app IDs are from using the mas CLI app
