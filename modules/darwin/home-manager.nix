@@ -24,7 +24,7 @@ in
     onActivation = {
       autoUpdate = true;
       cleanup = "zap";
-      upgrade = "true;"
+      upgrade = "true";
     };
     casks = pkgs.callPackage ./casks.nix {};
     taps = [
