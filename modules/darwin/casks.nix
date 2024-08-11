@@ -40,7 +40,10 @@ _:
   "tunnelblick"
 
   # WM/rice
-  "nikitabobko/tap/aerospace"
+  {
+    name = "nikitabobko/tap/aerospace";
+    args = { appdir = "/opt/homebrew/bin"; };
+  }
 
   # Virtualization
   # "utm" # use nix package
