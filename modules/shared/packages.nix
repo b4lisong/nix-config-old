@@ -64,8 +64,10 @@ with pkgs; [
   zip
 
   # Python packages
-  python3
-  virtualenv
+  #python3
+  #virtualenv
+  python39
+  python39Packages.virtualenv # globally install virtualenv
 
   ## Pentest tools
   # Network
