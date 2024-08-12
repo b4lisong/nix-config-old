@@ -45,4 +45,7 @@ _:
 
   # Virtualization
   # "utm" # use nix package
+
+  # Pentest
+  "burp-suite-professional"
 ]

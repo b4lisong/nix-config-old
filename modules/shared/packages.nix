@@ -61,5 +61,6 @@ with pkgs; [
   python39
   python39Packages.virtualenv # globally install virtualenv
 
-  # Networking
+  # Pentest
+
 ]
