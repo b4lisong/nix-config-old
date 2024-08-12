@@ -72,13 +72,16 @@ in
     };
   };
 
-  # Janky borders
-  services.jankyborders = {
-    enable = true;
-    active_color = "gradient(top_right=0xffa6e3a1,bottom_left=0xff89b4fa)";
-    inactive_color = "0x33585b70";
-    hidpi = true;
-    width = 5.0;
+  # System services
+  services = {
+    # Janky borders
+    jankyborders = {
+      enable = true;
+      active_color = "gradient(top_right=0xffa6e3a1,bottom_left=0xff89b4fa)";
+      inactive_color = "0x33585b70";
+      hidpi = true;
+      width = 5.0;
+    };
   };
 
   # Fully declarative dock using the latest from Nix Store
