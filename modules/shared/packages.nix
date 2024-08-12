@@ -73,7 +73,7 @@ with pkgs; [
 
   ## Pentest tools
   # Network
-  iputils
+  python312Packages.impacket
   netexec
   netdiscover
   ncftp
@@ -84,7 +84,6 @@ with pkgs; [
   hashcat
   hashcat-utils
   john
-  medusa
   thc-hydra
   # Port scan
   nmap
@@ -98,9 +97,8 @@ with pkgs; [
   ffuf
   gobuster
   # RE / Malware Analysis
-  gdb
   radare2
-  python3Packages.binwalk
+  binwalk
   # Services
   metasploit
   sqlmap
