@@ -19,6 +19,25 @@ in
     shell = pkgs.zsh;
   };
 
+  # System defaults
+  system.defaults = {
+    NSGlobalDomain = {
+      AppleICUForce24HourTime = true; # force 24-hour clock
+      AppleInterfaceStyle = "Dark";
+      AppleShowAllExtensions = true; # show all file exts in Finder
+      AppleShowAllFiles = true; # always show hidden files
+    };
+    finder = {
+      AppleShowAllExtensions = true;
+      AppleShowAllFiles = true;
+      FXDefaultSearchScope = "SCcf"; # default search scope: current folder
+      FXPreferredViewStyle = "clmv"; # default to column view
+      ShowPathbar = true;
+      ShowStatusBar = true;
+    };
+  };
+  system.keyboard.remapCapsLockToEscape = true;
+
   homebrew = {
     enable = true;
     onActivation = {
