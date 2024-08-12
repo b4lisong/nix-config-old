@@ -72,6 +72,14 @@ in
     };
   };
 
+  # Janky borders
+  services.jankyborders = {
+    enable = true;
+    active_color = "gradient(top_right=0x94e2d5,bottom_left=0xb4befe)";
+    hidpi = true;
+    width = 2.0;
+  };
+
   # Fully declarative dock using the latest from Nix Store
   local = { 
     dock = {
