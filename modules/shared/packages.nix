@@ -128,5 +128,7 @@ with pkgs; [
   smbscan
   # Wireless
   aircrack-ng
+  # Wordlists
+  seclists
 
 ]
