@@ -129,6 +129,7 @@ with pkgs; [
   # Wireless
   aircrack-ng
   # Wordlists
+  rockyou
   seclists
 
 ]
