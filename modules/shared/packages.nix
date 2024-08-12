@@ -69,7 +69,7 @@ with pkgs; [
   #virtualenv
   python39
   python39Packages.virtualenv # globally install virtualenv
-  python311
+  #python311 # also failing
 
   ## Pentest tools
   # Network
