@@ -10,6 +10,9 @@ in
       allowUnfree = true;
       allowBroken = true;
       allowInsecure = false;
+      permittedInsecurePackages = [
+        "tightvnc-1.3.10"
+      ];
       allowUnsupportedSystem = true;
     };
 
