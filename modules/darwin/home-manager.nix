@@ -75,7 +75,8 @@ in
   # Janky borders
   services.jankyborders = {
     enable = true;
-    active_color = "gradient(top_right=0xff94e2d5,bottom_left=0xffb4befe)";
+    active_color = "gradient(top_right=0xffa6e3a1,bottom_left=0xff89b4fa)";
+    inactive_color = "0x33585b70";
     hidpi = true;
     width = 2.0;
   };
