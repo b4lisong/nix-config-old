@@ -64,10 +64,12 @@ with pkgs; [
   zip
 
   # Python packages
+  # Seems to be an issue with python 3.12?
   #python3
   #virtualenv
   python39
   python39Packages.virtualenv # globally install virtualenv
+  python311
 
   ## Pentest tools
   # Network
