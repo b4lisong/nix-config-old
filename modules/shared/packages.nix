@@ -107,7 +107,7 @@ with pkgs; [
   nikto
   whatweb
   wprecon
-  wpscan
+  #wpscan
   # Windows
   bloodhound-py
   enum4linux-ng
