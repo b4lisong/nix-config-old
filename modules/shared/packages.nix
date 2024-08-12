@@ -6,17 +6,28 @@ with pkgs; [
   aspellDicts.en
   bash-completion
   bat
-  btop
   coreutils
   killall
-  kitty
   lazygit
   neofetch
   nnn
-  openssh
   sqlite
   wget
-  zip
+
+  # System monitoring
+  btop
+  iftop
+  iotop
+
+  # Common clients for various protocol connections
+  cifs-utils
+  freerdp
+  net-snmp
+  nfs-utils
+  ntp
+  openssh
+  samba
+  tightvnc
 
   # Encryption and security tools
   age
@@ -38,29 +49,84 @@ with pkgs; [
   noto-fonts-emoji
   meslo-lgs-nf
 
-  # Node.js development tools
-  #nodePackages.npm # globally install npm
-  #nodePackages.prettier
-  #nodejs
-
   # Text and terminal utilities
   htop
   hunspell
-  iftop
   jetbrains-mono
   jq
+  kitty
   ripgrep
   tree
   tmux
+  starship
+
+  # Archiving
   unrar
   unzip
-  starship
-  #zsh-powerlevel10k
+  cabextract
+  p7zip
+  zip
 
   # Python packages
   python39
   python39Packages.virtualenv # globally install virtualenv
 
-  # Pentest
+  ## Pentest tools
+  # Network
+  iputils
+  netexec
+  netdiscover
+  ncftp
+  netcat-gnu
+  responder
+  whois
+  # Password / Hashing
+  hashcat
+  hashcat-utils
+  john
+  medusa
+  thc-hydra
+  # Port scan
+  nmap
+  rustscan
+  # Proxy & pivoting
+  chisel
+  ligolo-ng
+  proxychains
+  # Fuzzing
+  feroxbuster
+  ffuf
+  gobuster
+  wfuzz
+  # RE / Malware Analysis
+  gdb
+  radare2
+  python3Packages.binwalk
+  # Services
+  metasploit
+  sqlmap
+  braa
+  onesixtyone
+  snmpcheck
+  davtest
+  # Web
+  apachetomcatscanner
+  nikto
+  whatweb
+  wprecon
+  wpscan
+  # Windows
+  bloodhound-py
+  enum4linux-ng
+  evil-winrm
+  gomapenum
+  kerbrute
+  nbtscan
+  nbtscanner
+  samba
+  smbmap
+  smbscan
+  # Wireless
+  aircrack-ng
 
 ]
