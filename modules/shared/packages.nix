@@ -17,17 +17,13 @@ with pkgs; [
   # System monitoring
   btop
   iftop
-  iotop
 
   # Common clients for various protocol connections
-  cifs-utils
-  freerdp
-  net-snmp
-  nfs-utils
+  freerdp3
   ntp
   openssh
   samba
-  tightvnc
+  tigervnc
 
   # Encryption and security tools
   age
@@ -68,8 +64,8 @@ with pkgs; [
   zip
 
   # Python packages
-  python39
-  python39Packages.virtualenv # globally install virtualenv
+  python3
+  virtualenv
 
   ## Pentest tools
   # Network
