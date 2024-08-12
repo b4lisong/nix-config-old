@@ -97,7 +97,6 @@ with pkgs; [
   binwalk
   # Services
   #metasploit
-  netexec
   sqlmap
   braa
   onesixtyone
