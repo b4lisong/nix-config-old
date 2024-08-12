@@ -97,7 +97,6 @@ with pkgs; [
   feroxbuster
   ffuf
   gobuster
-  wfuzz
   # RE / Malware Analysis
   gdb
   radare2
