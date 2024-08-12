@@ -92,7 +92,7 @@ with pkgs; [
   # Proxy & pivoting
   chisel
   ligolo-ng
-  proxychains
+  proxychains-ng
   # Fuzzing
   feroxbuster
   ffuf
