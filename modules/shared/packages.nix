@@ -96,7 +96,7 @@ with pkgs; [
   radare2
   binwalk
   # Services
-  metasploit
+  #metasploit
   sqlmap
   braa
   onesixtyone
