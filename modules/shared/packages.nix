@@ -71,8 +71,6 @@ with pkgs; [
 
   ## Pentest tools
   # Network
-  python312Packages.impacket
-  netexec
   netdiscover
   ncftp
   netcat-gnu
