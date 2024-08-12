@@ -78,7 +78,7 @@ in
     active_color = "gradient(top_right=0xffa6e3a1,bottom_left=0xff89b4fa)";
     inactive_color = "0x33585b70";
     hidpi = true;
-    width = 2.0;
+    width = 5.0;
   };
 
   # Fully declarative dock using the latest from Nix Store
