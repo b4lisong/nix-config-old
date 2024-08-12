@@ -68,7 +68,6 @@ with pkgs; [
   #virtualenv
   python39
   python39Packages.virtualenv # globally install virtualenv
-  python39Packages.netexec
 
   ## Pentest tools
   # Network
@@ -98,6 +97,7 @@ with pkgs; [
   binwalk
   # Services
   #metasploit
+  netexec
   sqlmap
   braa
   onesixtyone
