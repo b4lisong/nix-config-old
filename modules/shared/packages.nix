@@ -111,7 +111,6 @@ with pkgs; [
   # Windows
   bloodhound-py
   enum4linux-ng
-  evil-winrm
   gomapenum
   kerbrute
   nbtscan
