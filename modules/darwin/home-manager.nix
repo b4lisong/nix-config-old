@@ -36,7 +36,10 @@ in
       ShowStatusBar = true;
     };
   };
-  system.keyboard.remapCapsLockToEscape = true;
+  system.keyboard = {
+    enableKeyMapping = true;
+    remapCapsLockToEscape = true;
+  };
 
   homebrew = {
     enable = true;
