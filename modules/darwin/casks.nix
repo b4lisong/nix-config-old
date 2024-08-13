@@ -40,8 +40,7 @@ _:
   "tunnelblick"
 
   # WM/rice
-  #"nikitabobko/tap/aerospace" # removing for now
-  #"amethyst" # doesn't work very well :(
+  "nikitabobko/tap/aerospace"
 
   # UI
   "scroll-reverser"
