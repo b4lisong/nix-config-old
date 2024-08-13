@@ -41,7 +41,7 @@ _:
 
   # WM/rice
   #"nikitabobko/tap/aerospace" # removing for now
-  "amethyst"
+  #"amethyst" # doesn't work very well :(
 
   # Virtualization
   # "utm" # use nix package
