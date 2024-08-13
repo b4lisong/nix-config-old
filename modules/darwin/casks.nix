@@ -43,6 +43,9 @@ _:
   #"nikitabobko/tap/aerospace" # removing for now
   #"amethyst" # doesn't work very well :(
 
+  # UI
+  "scroll-reverser"
+
   # Virtualization
   # "utm" # use nix package
 
