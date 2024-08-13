@@ -49,8 +49,7 @@ in
       upgrade = true;
     };
     taps = [
-      "homebrew/cask-versions"
-      #"nikitabobko/tap"
+      "nikitabobko/tap"
     ];
     casks = pkgs.callPackage ./casks.nix {};
     # These app IDs are from using the mas CLI app
