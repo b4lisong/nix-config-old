@@ -246,7 +246,7 @@ let name = "JL Mitra";
       remember_window_size = true;
       placement_strategy = "center";
       confirm_os_window_close = 0;
-      hide_window_decorations = "titlebar-and-corners";
+      hide_window_decorations = "titlebar-only";
       macos_quit_when_last_window_closed = true;
     };
   };   
