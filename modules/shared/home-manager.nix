@@ -213,6 +213,7 @@ let name = "JL Mitra";
 
   kitty = {
     enable = true;
+    darwinLaunchOptions = [ "--single-instance" ];
     shellIntegration.enableZshIntegration = true;
     font = {
       name = "MesloLGS NF";
@@ -246,6 +247,7 @@ let name = "JL Mitra";
       placement_strategy = "center";
       confirm_os_window_close = 0;
       hide_window_decorations = "titlebar-and-corners";
+      macos_quit_when_last_window_closed = true;
     };
   };   
 
