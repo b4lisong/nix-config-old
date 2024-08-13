@@ -214,7 +214,6 @@ let name = "JL Mitra";
   kitty = {
     enable = true;
     shellIntegration.enableZshIntegration = true;
-    # darwinLaunchOptions = [ "--single-instance" ]; # does this break non-darwin?
     font = {
       name = "MesloLGS NF";
       size = 11;
