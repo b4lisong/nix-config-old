@@ -43,7 +43,10 @@ in
 
   homebrew = {
     enable = true;
-    global.brewfile = true;
+    global = {
+      autoUpdate = true;
+      brewfile = true;
+    };
     onActivation = {
       autoUpdate = true;
       cleanup = "zap";
