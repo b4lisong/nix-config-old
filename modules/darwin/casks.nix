@@ -1,53 +1,53 @@
 _:
 
 [
-  # Password Managers
-  "1password@beta"
-  "1password-cli"
+  ## Password Managers
+  #"1password@beta"
+  #"1password-cli"
 
-  # Development Tools
-  "homebrew/cask/docker"
-  #"visual-studio-code"
+  ## Development Tools
+  #"homebrew/cask/docker"
+  ##"visual-studio-code"
 
-  # Communication Tools
-  "superhuman"
-  "discord"
-  "slack"
-  "telegram"
-  "zoom"
+  ## Communication Tools
+  #"superhuman"
+  #"discord"
+  #"slack"
+  #"telegram"
+  #"zoom"
 
-  # Utility Tools
-  #"syncthing"
+  ## Utility Tools
+  ##"syncthing"
 
-  # Entertainment Tools
-  #"vlc"
+  ## Entertainment Tools
+  ##"vlc"
 
-  # Productivity Tools
-  "raycast"
-  "todoist"
-  "logseq"
-  "sunsama"
+  ## Productivity Tools
+  #"raycast"
+  #"todoist"
+  #"logseq"
+  #"sunsama"
 
-  # Browsers
-  "google-chrome"
+  ## Browsers
+  #"google-chrome"
 
-  # Security
-  "little-snitch"
+  ## Security
+  #"little-snitch"
 
-  # Networking
-  "tailscale"
-  "protonvpn"
-  "tunnelblick"
+  ## Networking
+  #"tailscale"
+  #"protonvpn"
+  #"tunnelblick"
 
-  # WM/rice
-  #"nikitabobko/tap/aerospace"
+  ## WM/rice
+  ##"nikitabobko/tap/aerospace"
 
-  # UI
-  "scroll-reverser"
+  ## UI
+  #"scroll-reverser"
 
-  # Virtualization
-  # "utm" # use nix package
+  ## Virtualization
+  ## "utm" # use nix package
 
-  # Pentest
-  "burp-suite-professional"
+  ## Pentest
+  #"burp-suite-professional"
 ]
