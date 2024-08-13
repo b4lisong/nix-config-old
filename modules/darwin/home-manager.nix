@@ -87,15 +87,14 @@ in
         stateVersion = "23.11";
       };
       programs = {
-        # macOS-specific options
-        kitty = {
-          darwinLaunchOptions = [ "--single-instance" ];
-          settings = {
-            macos_quit_when_last_window_closed = true;
-          };
-        };
       } // import ../shared/home-manager.nix { inherit config pkgs lib; };
 
+      programs.kitty = {
+        darwinLaunchOptions = [ "--single-instance" ];
+        settings = {
+          macos_quit_when_last_window_closed = true;
+        };
+      };
       # Marked broken Oct 20, 2022 check later to remove this
       # https://github.com/nix-community/home-manager/issues/3344
       manual.manpages.enable = false;
