@@ -49,7 +49,7 @@ in
       upgrade = true;
     };
     taps = [
-      "nikitabobko/tap"
+      #"nikitabobko/tap"
     ];
     casks = pkgs.callPackage ./casks.nix {};
     # These app IDs are from using the mas CLI app
