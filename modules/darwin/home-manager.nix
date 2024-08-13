@@ -90,6 +90,9 @@ in
         # macOS-specific options
         kitty = {
           darwinLaunchOptions = [ "--single-instance" ];
+          settings = {
+            macos_quit_when_last_window_closed = true;
+          };
         };
       } // import ../shared/home-manager.nix { inherit config pkgs lib; };
 
