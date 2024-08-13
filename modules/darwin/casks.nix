@@ -40,7 +40,7 @@ _:
   "tunnelblick"
 
   # WM/rice
-  "nikitabobko/tap/aerospace"
+  #"nikitabobko/tap/aerospace"
 
   # UI
   "scroll-reverser"
