@@ -10,6 +10,7 @@ _:
   ## Communication Tools
   #"superhuman"
   #"discord"
+  slack
 
   ## Productivity Tools
   #"raycast"
