@@ -111,6 +111,7 @@
             home-manager.darwinModules.home-manager
             (
               { pkgs, config, inputs, ... }:
+              {
                 home-manager.sharedModules = [
                   mac-app-util.homeManagerModules.default
                 ];
