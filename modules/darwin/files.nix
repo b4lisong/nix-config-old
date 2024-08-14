@@ -3,8 +3,18 @@
 let
   xdg_configHome = "${config.users.users.${user}.home}/.config";
   xdg_dataHome   = "${config.users.users.${user}.home}/.local/share";
-  xdg_stateHome  = "${config.users.users.${user}.home}/.local/state"; in
+  xdg_stateHome  = "${config.users.users.${user}.home}/.local/state";
+  aerospace_config = "${config.users.users.${user}.home}/.aerospace.toml"; in
 {
+  # AeroSpace configuration
+  "${aerospace_config}" = {
+    text = ''
+      # AeroSpace config defined by nix in modules/darwin/files.nix
+
+      # Start AeroSpace at login
+      start-at-login = true
+    '';
+  };
 
   # Raycast script so that "Run Emacs" is available and uses Emacs daemon
  # "${xdg_dataHome}/bin/emacsclient" = {
