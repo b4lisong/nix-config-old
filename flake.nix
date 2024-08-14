@@ -23,6 +23,10 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     }; 
+    nikitabobko-tap = {
+      url = "github:nikitabobko/homebrew-tap";
+      flake = false;
+    };
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -93,6 +97,7 @@
                   "homebrew/homebrew-core" = homebrew-core;
                   "homebrew/homebrew-cask" = homebrew-cask;
                   "homebrew/homebrew-bundle" = homebrew-bundle;
+                  "nikitabobko/homebrew-tap" = nikitabobko-tap;
                 };
                 mutableTaps = false;
                 autoMigrate = true;
