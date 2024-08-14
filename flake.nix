@@ -31,6 +31,8 @@
       url = "github:nikitabobko/homebrew-tap";
       flake = false;
     };
+    # Launch Nix-installed apps from Spotlight, etc.
+    mac-app-util.url = "github:hraban/mac-app-util";
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -48,6 +50,7 @@
     homebrew-core,
     homebrew-cask,
     nikitabobko-tap, # for AeroSpace
+    mac-app-util,
     home-manager,
     nixpkgs,
     disko,
@@ -104,7 +107,15 @@
           inherit system;
           specialArgs = inputs;
           modules = [
+            mac-app-util.darwinModules.default
             home-manager.darwinModules.home-manager
+            (
+              { pkgs, config, inputs, ... }:
+                home-manager.sharedModules = [
+                  mac-app-util.homeManagerModules.default
+                ];
+              }
+            )
             nix-homebrew.darwinModules.nix-homebrew
             {
               nix-homebrew = {
