@@ -11,6 +11,9 @@
     nix-homebrew = {
       url = "github:zhaofengli-wip/nix-homebrew";
     };
+    ## Declarative homebrew taps
+    ## Remember to include in:
+    ## outputs = ... and nix-hombrew.taps
     homebrew-bundle = {
       url = "github:homebrew/homebrew-bundle";
       flake = false;
@@ -23,6 +26,7 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     }; 
+    # for AeroSpace
     nikitabobko-tap = {
       url = "github:nikitabobko/homebrew-tap";
       flake = false;
@@ -43,7 +47,7 @@
     homebrew-bundle,
     homebrew-core,
     homebrew-cask,
-    nikitabobko-tap,
+    nikitabobko-tap, # for AeroSpace
     home-manager,
     nixpkgs,
     disko,
@@ -110,6 +114,7 @@
                   "homebrew/homebrew-core" = homebrew-core;
                   "homebrew/homebrew-cask" = homebrew-cask;
                   "homebrew/homebrew-bundle" = homebrew-bundle;
+                  # AeroSpace
                   "nikitabobko/homebrew-tap" = nikitabobko-tap;
                 };
                 mutableTaps = false;
