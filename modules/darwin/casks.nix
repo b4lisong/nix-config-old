@@ -13,10 +13,9 @@ _:
   "slack"
 
   ## Productivity Tools
-  #"raycast"
-  #"todoist"
-  #"logseq"
-  #"sunsama"
+  "todoist"
+  "logseq"
+  "sunsama"
 
   ## Browsers
   #"google-chrome"
