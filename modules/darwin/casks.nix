@@ -8,7 +8,7 @@ _:
   ## Development Tools
 
   ## Communication Tools
-  #"superhuman"
+  "superhuman"
   #"discord"
   "slack"
 
