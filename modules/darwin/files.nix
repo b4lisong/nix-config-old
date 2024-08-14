@@ -57,7 +57,7 @@ let
       # All possible commands: https://nikitabobko.github.io/AeroSpace/commands
 
       # Open kitty terminal
-      alt-enter = 'exec-and-forget open -na {pkgs.kitty}/Applications/kitty.app'
+      alt-enter = 'exec-and-forget open -na ${pkgs.kitty}/Applications/kitty.app'
 
       # See: https://nikitabobko.github.io/AeroSpace/commands#layout
       alt-f = 'fullscreen'
