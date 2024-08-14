@@ -6,13 +6,10 @@ _:
   "1password-cli"
 
   ## Development Tools
-  #"homebrew/cask/docker"
 
   ## Communication Tools
   #"superhuman"
   #"discord"
-  #"slack"
-  #"zoom"
 
   ## Productivity Tools
   #"raycast"

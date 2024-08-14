@@ -6,4 +6,5 @@ shared-packages ++ [
   dockutil
   utm
   zoom-us
+  slack
 ]
