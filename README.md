@@ -1,3 +1,8 @@
+> [!NOTE]
+> This fork isn't really meant for public consumption (yet).
+>
+> Check out the [original from dustinlyons](https://github.com/dustinlyons/nixos-config) instead.
+
 ### TODO:
 - [ ] Homebrew taps, can we define in just one place instead of two?
 - [ ] Clean up and remove parts from original fork we aren't using
