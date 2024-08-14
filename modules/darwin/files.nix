@@ -57,7 +57,7 @@ let
       # All possible commands: https://nikitabobko.github.io/AeroSpace/commands
 
       # Open kitty terminal
-      alt-enter = 'exec-and-forget open -n {pkgs.kitty}/Applications/kitty.app'
+      alt-enter = 'exec-and-forget open -na {pkgs.kitty}/Applications/kitty.app'
 
       # See: https://nikitabobko.github.io/AeroSpace/commands#layout
       alt-f = 'fullscreen'
@@ -92,7 +92,6 @@ let
       alt-7 = 'workspace 7'
       alt-8 = 'workspace 8'
       alt-9 = 'workspace 9'
-      alt-0 = 'workspace 10'
 
       alt-shift-1 = 'move-node-to-workspace 1'
       alt-shift-2 = 'move-node-to-workspace 2'
@@ -103,7 +102,6 @@ let
       alt-shift-7 = 'move-node-to-workspace 7'
       alt-shift-8 = 'move-node-to-workspace 8'
       alt-shift-9 = 'move-node-to-workspace 9'
-      alt-shift-0 = 'move-node-to-workspace 10'
       
       alt-shift-c = 'reload-config'
       
