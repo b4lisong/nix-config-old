@@ -6,6 +6,7 @@
 ### TODO:
 - [ ] Homebrew taps, can we define in just one place instead of two?
 - [ ] Clean up and remove parts from original fork we aren't using
+- [ ] enable x86-64 Nix packages
 ### 1. Install dependencies
 ```sh
 xcode-select --install
