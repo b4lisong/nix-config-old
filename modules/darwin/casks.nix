@@ -21,7 +21,7 @@ _:
   #"google-chrome"
 
   ## Security
-  #"little-snitch"
+  "little-snitch"
 
   ## Networking
   #"tailscale"
