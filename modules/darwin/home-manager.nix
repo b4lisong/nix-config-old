@@ -52,7 +52,7 @@ in
       cleanup = "zap";
       upgrade = true;
     };
-    taps = [ "homebrew/cask" ]; # must be defined to avoid warning / untap?
+    taps = [ "homebrew/cask" "nikitabobko/tap" ]; # must be defined here to avoid untap warning
     casks = pkgs.callPackage ./casks.nix {};
     # These app IDs are from using the mas CLI app
     # mas = mac app store
