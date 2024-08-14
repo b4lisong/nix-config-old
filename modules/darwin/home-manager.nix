@@ -114,7 +114,7 @@ in
       enable = true;
       entries = [
         { path = "/System/Applications/Messages.app/"; }
-        { path = "/Applications/Slack.app/"; }
+        { path = "${pkgs.slack}/Applications/Slack.app/"; }
         { path = "/Applications/Superhuman.app/"; }
         { path = "/Applications/Todoist.app/"; }
         { path = "/Applications/Sunsama.app/"; }
