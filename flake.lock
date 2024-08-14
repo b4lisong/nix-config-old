@@ -206,6 +206,22 @@
         "type": "github"
       }
     },
+    "nikitabobko-tap": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1723415137,
+        "narHash": "sha256-dLG5NciNWc/KTygIN/Wvn71J+3sQYZZPLDmnou3ISxY=",
+        "owner": "nikitabobko",
+        "repo": "homebrew-tap",
+        "rev": "b8e9670488787f3606b80262167bae0e7e427017",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nikitabobko",
+        "repo": "homebrew-tap",
+        "type": "github"
+      }
+    },
     "nix-darwin": {
       "inputs": {
         "nixpkgs": "nixpkgs_3"
@@ -331,6 +347,7 @@
         "homebrew-bundle": "homebrew-bundle",
         "homebrew-cask": "homebrew-cask",
         "homebrew-core": "homebrew-core",
+        "nikitabobko-tap": "nikitabobko-tap",
         "nix-homebrew": "nix-homebrew",
         "nixpkgs": "nixpkgs_5",
         "secrets": "secrets"
