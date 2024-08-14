@@ -1,3 +1,6 @@
+### TODO:
+- [ ] Homebrew taps, can we define in just one place instead of two?
+- [ ] Clean up and remove parts from original fork we aren't using
 ### 1. Install dependencies
 ```sh
 xcode-select --install
