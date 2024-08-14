@@ -35,7 +35,7 @@ _:
   "nikitabobko/tap/aerospace"
 
   ## UI
-  #"scroll-reverser"
+  "scroll-reverser"
 
   ## Virtualization
   ## "utm" # use nix package
