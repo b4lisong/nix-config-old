@@ -9,7 +9,7 @@ _:
 
   ## Communication Tools
   "superhuman"
-  #"discord"
+  "discord"
   "slack"
 
   ## Productivity Tools
@@ -18,15 +18,14 @@ _:
   "sunsama"
 
   ## Browsers
-  #"google-chrome"
 
   ## Security
   "little-snitch"
 
   ## Networking
-  #"tailscale"
-  #"protonvpn"
-  #"tunnelblick"
+  "tailscale"
+  "protonvpn"
+  "tunnelblick"
 
   ## WM/rice
   "nikitabobko/tap/aerospace"
@@ -38,5 +37,5 @@ _:
   ## "utm" # use nix package
 
   ## Pentest
-  #"burp-suite-professional"
+  "burp-suite-professional"
 ]
