@@ -62,3 +62,8 @@ Finally, alter your system with this command:
 ```sh
 nix run .#build-switch
 ```
+> [!NOTE]
+> If you needed to rename `/etc/nix/nix.conf` to `/etc/nix/nix.conf.before-nix-darwin`, the first build command needs to be:
+>
+> `nix --extra-experimental-features nix-command --extra-experimental-features flakes run .#build-switch`
+
