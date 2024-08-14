@@ -14,8 +14,20 @@ let
       # Start AeroSpace at login
       start-at-login = true
 
+      # You can use it to add commands that run after login to macOS user session.
+      # 'start-at-login' needs to be 'true' for 'after-login-command' to work
+      # Available commands: https://nikitabobko.github.io/AeroSpace/commands
+      after-login-command = []
+      
+      # You can use it to add commands that run after AeroSpace startup.
+      # 'after-startup-command' is run after 'after-login-command'
+      # Available commands : https://nikitabobko.github.io/AeroSpace/commands
+      after-startup-command = []
+
       # Mouse follows focus when focused monitor changes
       on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+      # Move mouse to center of window when focus changes to it
+      on-focus-changed = 'move-mouse window-lazy-center'
 
       # Default layout & orientation of root container
       default-root-container-layout = 'tiles'
@@ -122,7 +134,6 @@ let
       
       # See: https://nikitabobko.github.io/AeroSpace/commands#mode
       alt-shift-semicolon = 'mode service'
-      
       # 'service' binding mode declaration.
       # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
       [mode.service.binding]
