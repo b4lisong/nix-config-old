@@ -56,6 +56,9 @@ let
       
       # All possible commands: https://nikitabobko.github.io/AeroSpace/commands
 
+      # Open kitty terminal
+      alt-enter = 'exec-and-forget open -n {pkgs.kitty}/Applications/kitty.app'
+
       # See: https://nikitabobko.github.io/AeroSpace/commands#layout
       alt-f = 'fullscreen'
       alt-e = 'layout tiles horizontal vertical' # 'layout toggle split' in i3
@@ -113,6 +116,28 @@ let
       l = 'resize width +50'
       enter = 'mode main'
       esc = 'mode main'
+
+      # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
+      alt-tab = 'workspace-back-and-forth'
+      # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
+      alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+      
+      # See: https://nikitabobko.github.io/AeroSpace/commands#mode
+      alt-shift-semicolon = 'mode service'
+      
+      # 'service' binding mode declaration.
+      # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
+      [mode.service.binding]
+      esc = ['reload-config', 'mode main']
+      r = ['flatten-workspace-tree', 'mode main'] # reset layout
+      #s = ['layout sticky tiling', 'mode main'] # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
+      f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
+      backspace = ['close-all-windows-but-current', 'mode main']
+      
+      alt-shift-h = ['join-with left', 'mode main']
+      alt-shift-j = ['join-with down', 'mode main']
+      alt-shift-k = ['join-with up', 'mode main']
+      alt-shift-l = ['join-with right', 'mode main']
     '';
   };
 
