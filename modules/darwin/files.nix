@@ -89,6 +89,11 @@ let
       alt-shift-j = 'move down'
       alt-shift-k = 'move up'
       alt-shift-l = 'move right'
+
+      alt-shift-cmd-h = ['join-with left', 'mode main']
+      alt-shift-cmd-j = ['join-with down', 'mode main']
+      alt-shift-cmd-k = ['join-with up', 'mode main']
+      alt-shift-cmd-l = ['join-with right', 'mode main']
       
       # See: https://nikitabobko.github.io/AeroSpace/commands#resize
       alt-shift-minus = 'resize smart -50'
@@ -143,10 +148,6 @@ let
       f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
       backspace = ['close-all-windows-but-current', 'mode main']
       
-      alt-shift-h = ['join-with left', 'mode main']
-      alt-shift-j = ['join-with down', 'mode main']
-      alt-shift-k = ['join-with up', 'mode main']
-      alt-shift-l = ['join-with right', 'mode main']
     '';
   };
 
