@@ -6,6 +6,7 @@ _:
   "1password-cli"
 
   ## Development Tools
+  "orbstack"
 
   ## Communication Tools
   "superhuman"

@@ -32,8 +32,7 @@ with pkgs; [
   libfido2
 
   # Cloud-related tools and SDKs
-  docker
-  docker-compose
+  # move docker to nixos-specific config; use orbstack for macos
 
   # Media-related packages
   dejavu_fonts
