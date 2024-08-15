@@ -19,6 +19,7 @@ _:
   "sunsama"
 
   ## Browsers
+  "chromium"
 
   ## Security
   "little-snitch"
