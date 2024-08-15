@@ -71,8 +71,8 @@ in
     masApps = {
       # "1password" = 1333542190; # using cask instead
       "1Password for Safari" = 1569813296;
+      "Vimari" = 1480933944; 
       "wireguard" = 1451685025;
-      # "tailscale" = 1475387142; # not working? use cask?
     };
   };
 
