@@ -24,7 +24,7 @@ _:
 
   ## Networking
   "tailscale"
-  "protonvpn"
+  #"protonvpn"
   "tunnelblick"
 
   ## WM/rice
