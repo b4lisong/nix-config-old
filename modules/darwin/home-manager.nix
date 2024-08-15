@@ -26,6 +26,8 @@ in
       AppleInterfaceStyle = "Dark";
       AppleShowAllExtensions = true; # show all file exts in Finder
       AppleShowAllFiles = true; # always show hidden files
+      NSNavPanelExpandedStateForSaveMode = true; # use expanded save panel always
+      NSWindowShouldDragOnGesture = true; # move window by holding anywhere on it
     };
     finder = {
       AppleShowAllExtensions = true;
@@ -35,6 +37,7 @@ in
       ShowPathbar = true;
       ShowStatusBar = true;
     };
+    WindowManager.AppWindowGroupingBehavior = true;
   };
   system.keyboard = {
     enableKeyMapping = true;

@@ -63,8 +63,16 @@ let user = "balisong"; in
       # Show specific text as a greeting at login
       loginwindow.LoginwindowText = "おかえり、お兄ちゃん";
 
-      # Only ask for screensaver password if longer than 10 sec
-      screensaver.askForPasswordDelay = 10;
+      screensaver = {
+        # Always ask for password when screensaver unlocked
+        askForPassword = true;
+        # Only ask for screensaver password if longer than 10 sec
+        askForPasswordDelay = 10;
+      };
+
+      # One space spans across all physical displays
+      # Useful due to AeroSpace
+      spaces.spans-displays = true;
 
       dock = {
         autohide = true;
