@@ -266,7 +266,7 @@ let name = "JL Mitra";
       add_newline = false;
       format = ''
         [┌╴\(](bold green)[$username@$hostname](bold blue)[\)](bold green) $os
-        [| $all└─](bold green) $character
+        [|$all└─](bold green)$character
       '';
       character = {
         success_symbol = "[>](bold green)";
@@ -287,12 +287,17 @@ let name = "JL Mitra";
         disabled = false;
       };
       os = {
-        style = "bold green";
-        format = "on [$symbol$arch$name](style)";
+        style = "bold white";
+        format = "on [$symbol $arch$name](style)";
         disabled = false;
       };
       os.symbols = {
         Macos = "";
+        NixOS = "";
+        Kali = "";
+        Linux = "";
+        Windows = "";
+        Unknown = "";
       };
       git_commit = {
         commit_hash_length = 7;
