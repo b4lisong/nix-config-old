@@ -285,7 +285,7 @@ let name = "JL Mitra";
       hostname = {
         ssh_only = false;
         format = "[$ssh_symbol](bold blue)[$hostname](bold blue)";
-        trim_at = ".companyname.com";
+        trim_at = ".";
         disabled = false;
       };
       os = {
