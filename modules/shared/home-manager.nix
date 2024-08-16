@@ -268,7 +268,7 @@ let name = "JL Mitra";
         [$username@$hostname](bold blue) $os $all $character
       '';
       character = {
-        success_symbol = "[$](bold green)";
+        success_symbol = "[>](bold green)";
         error_symbol = "[](bold red)";
         # vicmd_symbol = "[V](bold green)";
       };
