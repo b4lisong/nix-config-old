@@ -265,8 +265,8 @@ let name = "JL Mitra";
       # src: https://gist.github.com/mIcHyAmRaNe/a6ee5ca3311d61ae6f181e691643925d
       add_newline = false;
       format = ''
-        [┌╴\(](bold green)[$username@$hostname](bold blue)[\)](bold green) $os\
-        | $all[└─](bold green) $character\
+        [┌╴\(](bold green)[$username@$hostname](bold blue)[\)](bold green) $os
+        | $all[└─](bold green) $character
       '';
       character = {
         success_symbol = "[>](bold green)";
