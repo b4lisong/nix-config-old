@@ -315,10 +315,10 @@ let name = "JL Mitra";
         only_detached = false;
       };
       directory = {
-        truncation_length = 15;
+        truncation_length = 8;
         truncation_symbol = "…/";
         truncate_to_repo = true;
-        read_only = "[](bold red)";
+        read_only = "🔒";
       };
     };
   };
