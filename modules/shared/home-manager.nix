@@ -268,7 +268,7 @@ let name = "JL Mitra";
       add_newline = true;
       format = ''
         [┌╴\(](bold green)[$username@$hostname](bold blue)[\)](bold green) $os
-        [|└─](bold green)$directory$git_branch$git_status$git_commit$python$character
+        [|└─](bold green)$all$character
       '';
       character = {
         success_symbol = "[>](bold green)";
@@ -307,10 +307,6 @@ let name = "JL Mitra";
         disabled = false;
       };
       git_status = {
-        ahead = "⇡${count}";
-        diverged = "⇕⇡${ahead_count}⇣${behind_count}";
-        behind = "⇣${count}";
-        staged = "[++\($count\)](green)";
         disabled = false;
       };
       git_commit = {
