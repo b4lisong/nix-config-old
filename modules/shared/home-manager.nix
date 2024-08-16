@@ -262,11 +262,13 @@ let name = "JL Mitra";
   starship = {
     enable = true;
     settings = {
-      # src: https://gist.github.com/mIcHyAmRaNe/a6ee5ca3311d61ae6f181e691643925d
-      add_newline = false;
+      # sources: 
+      # https://gist.github.com/mIcHyAmRaNe/a6ee5ca3311d61ae6f181e691643925d
+      # https://gist.github.com/pythoninthegrass/faff76c2f571c57126e793733aae167d
+      add_newline = true;
       format = ''
         [┌╴\(](bold green)[$username@$hostname](bold blue)[\)](bold green) $os
-        [|$all└─](bold green)$character
+        [|└─](bold green)$directory$git_branch$git_status$git_commit$python$character
       '';
       character = {
         success_symbol = "[>](bold green)";
@@ -299,13 +301,29 @@ let name = "JL Mitra";
         Windows = "";
         Unknown = "";
       };
+      git_branch = {
+        truncation_length = 15;
+        truncation_symbol = "";
+        disabled = false;
+      };
+      git_status = {
+        ahead = "⇡${count}";
+        diverged = "⇕⇡${ahead_count}⇣${behind_count}";
+        behind = "⇣${count}";
+        staged = "[++\($count\)](green)";
+        disabled = false;
+      };
       git_commit = {
-        commit_hash_length = 7;
+        commit_hash_length = 4;
         tag_disabled = false;
         only_detached = false;
       };
-      git_status.disabled = false;
-      directory.read_only = "(read only)";
+      directory = {
+        truncation_length = 15;
+        truncation_symbol = "…/";
+        truncate_to_repo = true;
+        read_only = "[](bold red)";
+      };
     };
   };
 
