@@ -268,7 +268,7 @@ let name = "JL Mitra";
       add_newline = true;
       format = ''
         [┌╴\(](bold green)[$username@$hostname](bold blue)[\)](bold green) $os
-        [|└─](bold green)$all$character
+        [| $all└─](bold green)$character
       '';
       character = {
         success_symbol = "[>](bold green)";
