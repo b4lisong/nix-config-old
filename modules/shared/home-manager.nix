@@ -262,16 +262,36 @@ let name = "JL Mitra";
   starship = {
     enable = true;
     settings = {
+      # src: https://gist.github.com/mIcHyAmRaNe/a6ee5ca3311d61ae6f181e691643925d
+      add_newline = false;
       format = ''
-        [┌───────────────────>](bold green)
-        [│](bold green)$directory$rust$package
-        [└─>](bold green) 
+        [┌╴\\(](bold green)[$username㉿$hostname](bold blue)[\\)](bold green)$os $time\
+        | $all[└─](green) $character\
       '';
       character = {
-        success_symbol = "[>](bold green)";
-        error_symbol = "[>](bold red)";
-        vicmd_symbol = "[V](bold green)";
+        success_symbol = "[$](bold green)";
+        error_symbol = "[](bold red)";
+        # vicmd_symbol = "[V](bold green)";
       };
+      username = {
+        style_user = "blue bold";
+        style_root = "red bold";
+        format = "[$user]($style)";
+        disabled = false;
+        show_always = true;  
+      };
+      hostname = {
+        ssh_only = false;
+        format = "[$ssh_symbol](bold blue)[$hostname](bold blue)";
+        trim_at = ".companyname.com";
+        disabled = false;
+      };
+      os = {
+        style = "bold green";
+        format = "on [$symbol$arch$name](style)";
+      };
+      # os.symbols = {
+      # };
       git_commit = {
         commit_hash_length = 7;
         tag_disabled = false;
