@@ -262,6 +262,11 @@ let name = "JL Mitra";
   starship = {
     enable = true;
     settings = {
+      format = ''
+        [┌───────────────────>](bold green)
+        [│](bold green)$directory$rust$package
+        [└─>](bold green) 
+      '';
       character = {
         success_symbol = "[>](bold green)";
         error_symbol = "[>](bold red)";
