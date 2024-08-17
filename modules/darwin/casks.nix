@@ -38,6 +38,9 @@ _:
   ## Virtualization
   ## "utm" # use nix package
 
+  # Utilities
+  "xquartz" # for X11 forwarding
+
   ## Pentest
   "burp-suite-professional"
 ]
