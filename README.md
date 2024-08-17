@@ -4,6 +4,7 @@
 > Check out the [original from dustinlyons](https://github.com/dustinlyons/nixos-config) instead.
 
 ### TODO:
+- [ ] Merge orbstack-testing branch
 - [ ] Homebrew taps, can we define in just one place instead of two?
 - [ ] Clean up and remove parts from original fork we aren't using
 - [ ] enable x86-64 Nix packages
