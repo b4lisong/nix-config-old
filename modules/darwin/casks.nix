@@ -43,4 +43,5 @@ _:
 
   ## Pentest
   "burp-suite-professional"
+  "bloodhound"
 ]
