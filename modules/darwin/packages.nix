@@ -14,6 +14,7 @@ shared-packages ++ [
   aspell
   aspellDicts.en
   ranger
+  lazygit
   # Common clients for various protocol connections
   freerdp3
   ntp
