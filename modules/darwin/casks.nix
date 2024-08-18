@@ -12,6 +12,7 @@ _:
   "superhuman"
   "discord"
   "slack"
+  "signal"
 
   ## Productivity Tools
   "todoist"
