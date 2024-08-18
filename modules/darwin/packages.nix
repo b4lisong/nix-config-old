@@ -39,6 +39,4 @@ shared-packages ++ [
   # Python
   python39
   python39Packages.virtualenv
-  # Databases
-  neo4j
 ]
