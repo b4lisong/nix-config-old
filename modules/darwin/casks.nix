@@ -43,5 +43,6 @@ _:
 
   ## Pentest
   "burp-suite-professional"
-  "bloodhound"
+  "bloodhound" # xattr -d com.apple.quarantine ./BloodHound.app
+  "neo4j" # for bloodhound
 ]
