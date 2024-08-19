@@ -42,6 +42,9 @@ _:
   # Utilities
   "xquartz" # for X11 forwarding
 
+  # Media
+  "spotify"
+
   ## Pentest
   "burp-suite-professional"
   "bloodhound" # xattr -d com.apple.quarantine ./BloodHound.app
