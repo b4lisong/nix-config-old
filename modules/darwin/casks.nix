@@ -35,6 +35,7 @@ _:
 
   ## UI
   "scroll-reverser"
+  "raycast"
 
   ## Virtualization
   ## "utm" # use nix package
