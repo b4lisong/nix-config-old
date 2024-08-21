@@ -21,6 +21,7 @@ _:
 
   ## Browsers
   "google-chrome"
+  "firefox"
 
   ## Security
   "little-snitch"
