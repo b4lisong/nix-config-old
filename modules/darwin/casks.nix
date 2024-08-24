@@ -20,4 +20,7 @@ _:
 
   # Utilities
   "xquartz" # for X11 forwarding
+
+  # VNC/RD
+  "parsec"
 ]
