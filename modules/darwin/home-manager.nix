@@ -119,6 +119,7 @@ in
         { path = "/System/Applications/Messages.app/"; }
         { path = "${pkgs.kitty}/Applications/kitty.app/"; }
         { path = "/Applications/1Password.app/"; }
+        {
           path = "${config.users.users.${user}.home}/.local/share/";
           section = "others";
           options = "--sort name --view grid --display folder";
