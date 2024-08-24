@@ -117,24 +117,13 @@ in
       enable = true;
       entries = [
         { path = "/System/Applications/Messages.app/"; }
-        { path = "/Applications/Slack.app/"; }
-        { path = "/Applications/Superhuman.app/"; }
-        { path = "/Applications/Todoist.app/"; }
-        { path = "/Applications/Sunsama.app/"; }
-        { path = "/Applications/Logseq.app/"; }
         { path = "${pkgs.kitty}/Applications/kitty.app/"; }
         { path = "/Applications/1Password.app/"; }
-        #{
-        #  path = toString myEmacsLauncher;
-        #  section = "others";
-        #}
-        {
           path = "${config.users.users.${user}.home}/.local/share/";
           section = "others";
           options = "--sort name --view grid --display folder";
         }
         {
-          #path = "${config.users.users.${user}.home}/.local/share/downloads";
           path = "${config.users.users.${user}.home}/Downloads";
           section = "others";
           options = "--sort name --view grid --display stack";
