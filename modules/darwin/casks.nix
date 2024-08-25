@@ -23,4 +23,7 @@ _:
 
   # VNC/RD
   "parsec"
+
+  # Media
+  "stremio"
 ]
