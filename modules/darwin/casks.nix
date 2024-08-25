@@ -38,14 +38,14 @@ _:
   "scroll-reverser"
   "raycast"
 
-  ## Virtualization
-  ## "utm" # use nix package
-
   # Utilities
   "xquartz" # for X11 forwarding
 
   # Media
   "spotify"
+
+  # VM/RDP
+  "parsec"
 
   ## Pentest
   "burp-suite-professional"
