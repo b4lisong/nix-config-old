@@ -205,46 +205,6 @@ let name = "JL Mitra";
       '';
      };
 
-  kitty = {
-    enable = true;
-    darwinLaunchOptions = [ "--single-instance" ];
-    shellIntegration.enableZshIntegration = true;
-    font = {
-      name = "MesloLGS NF";
-      size = 11;
-    };
-    theme = "Catppuccin-Mocha";
-    keybindings = {
-      "f1" = "show_kitty_env_vars";
-    };
-    settings = {
-      background_opacity = "0.9";
-      background_tint = "0.9";
-      background_blur = 10;
-      dim_opacity = "1.0";
-      tab_bar_edge = "bottom";
-      tab_bar_margin_width = "20.0";
-      tab_bar_margin_height = "20.0 0.0";
-      tab_bar_style = "powerline";
-      tab_bar_align = "left";
-      tab_bar_min_tabs = 2;
-      tab_switch_strategy = "previous";
-      tab_activity_symbol = "none";
-      tab_powerline_style = "slanted";
-      tab_title_template = "{fmt.fg.red}{bell_symbol}{activity_symbol}{fmt.fg.tab}{title}";
-      active_tab_title_template = "none";
-      scrollback_lines = 10000;
-      enable_audio_bell = false;
-      window_margin_width = 0;
-      window_padding_width = 20;
-      remember_window_size = true;
-      placement_strategy = "center";
-      confirm_os_window_close = 0;
-      hide_window_decorations = "titlebar-only";
-      macos_quit_when_last_window_closed = true;
-    };
-  };   
-
   starship = {
     enable = true;
     settings = {
@@ -253,7 +213,7 @@ let name = "JL Mitra";
       # https://gist.github.com/pythoninthegrass/faff76c2f571c57126e793733aae167d
       add_newline = true;
       format = ''
-        [┌╴\(](bold green)[$username@$hostname](bold blue)[\)](bold green) $os
+        [┌╴\(](bold green)[$username@$hostname](bold blue)[\)](bold green)$os$container
         [| $all└─](bold green)$character
       '';
       character = {
@@ -274,9 +234,13 @@ let name = "JL Mitra";
         trim_at = ".";
         disabled = false;
       };
+      container = {
+        style = "bold red dimmed";
+        format = "[\\[$symbol $name\\]]($style)";
+      };
       os = {
         style = "bold white";
-        format = "on [$symbol $arch$name](style)";
+        format = "[\\[$symbol $arch$name\\]]($style)";
         disabled = false;
       };
       os.symbols = {
@@ -288,8 +252,8 @@ let name = "JL Mitra";
         Unknown = "";
       };
       git_branch = {
-        truncation_length = 15;
-        truncation_symbol = "";
+        truncation_length = 16;
+        truncation_symbol = "...";
         disabled = false;
       };
       git_status = {
