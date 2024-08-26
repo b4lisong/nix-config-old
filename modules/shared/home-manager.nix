@@ -253,7 +253,7 @@ let name = "JL Mitra";
       # https://gist.github.com/pythoninthegrass/faff76c2f571c57126e793733aae167d
       add_newline = true;
       format = ''
-        [┌╴\(](bold green)[$username@$hostname](bold blue)[\)](bold green) $os
+        [┌╴\(](bold green)[$username@$hostname](bold blue)[\)](bold green)$os$container
         [| $all└─](bold green)$character
       '';
       character = {
@@ -274,9 +274,13 @@ let name = "JL Mitra";
         trim_at = ".";
         disabled = false;
       };
+      container = {
+        style = "bold red dimmed";
+        format = "[\\[$symbol $name\\]]($style)";
+      };
       os = {
         style = "bold white";
-        format = "on [$symbol $arch$name](style)";
+        format = "[\\[$symbol $arch$name\\]]($style)";
         disabled = false;
       };
       os.symbols = {
@@ -288,8 +292,8 @@ let name = "JL Mitra";
         Unknown = "";
       };
       git_branch = {
-        truncation_length = 15;
-        truncation_symbol = "";
+        truncation_length = 16;
+        truncation_symbol = "...";
         disabled = false;
       };
       git_status = {

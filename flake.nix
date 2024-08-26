@@ -142,12 +142,12 @@
         inherit system;
         specialArgs = inputs;
         modules = [
-          disko.nixosModules.disko
           home-manager.nixosModules.home-manager {
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
               users.${user} = import ./modules/nixos/home-manager.nix;
+              backupFileExtension = "backup";
             };
           }
           ./hosts/nixos

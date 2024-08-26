@@ -1,68 +1,76 @@
+## Packages specific to nixos-orbstack
+
 { pkgs }:
 
 with pkgs;
-let shared-packages = import ../shared/packages.nix { inherit pkgs; }; in
-shared-packages ++ [
+let
+  shared_packages = import ../shared/packages.nix { inherit pkgs; };
+in shared_packages ++ [
+  # Python packages
+  python3
+  virtualenv
 
-  # Security and authentication
-  yubikey-agent
-  keepassxc
+  # Web
+  php
 
-  # App and package management
-  appimage-run
-  gnumake
-  cmake
-  home-manager
+  # Port scanning
+  nmap
 
-  # Media and design tools
-  vlc
-  fontconfig
-  font-manager
+  # Network
+  netdiscover
+  ncftp
+  netcat-gnu
+  responder
+  whois
 
-  # Productivity tools
-  bc # old school calculator
-  galculator
+  # Password / Hash
+  hashcat
+  hashcat-utils
+  john
+  thc-hydra
 
-  # Audio tools
-  cava # Terminal audio visualizer
-  pavucontrol # Pulse audio controls
+  # Proxy, pivoting
+  chisel
+  ligolo-ng
+  proxychains-ng
 
-  # Testing and development tools
-  direnv
-  rofi
-  rofi-calc
-  postgresql
-  libtool # for Emacs vterm
+  # Fuzzing
+  feroxbuster
+  ffuf
+  gobuster
 
-  # Screenshot and recording tools
-  flameshot
+  # RE
+  radare2
+  binwalk
 
-  # Text and terminal utilities
-  feh # Manage wallpapers
-  screenkey
-  tree
-  unixtools.ifconfig
-  unixtools.netstat
-  xclip # For the org-download package in Emacs
-  xorg.xwininfo # Provides a cursor to click and learn about windows
-  xorg.xrandr
+  # Services
+  metasploit
+  sqlmap
+  braa
+  onesixtyone
+  snmpcheck
+  davtest
 
-  # File and system utilities
-  inotify-tools # inotifywait, inotifywatch - For file system events
-  i3lock-fancy-rapid
-  libnotify
-  pcmanfm # File browser
-  sqlite
-  xdg-utils
+  # Web
+  apachetomcatscanner
+  nikto
+  whatweb
+  wprecon
+  wpscan
 
-  # Other utilities
-  yad # yad-calendar is used with polybar
-  xdotool
-  google-chrome
+  # Windows
+  enum4linux-ng
+  gomapenum
+  kerbrute
+  nbtscan
+  nbtscanner
+  samba
+  smbscan
 
-  # PDF viewer
-  zathura
+  # Wireless
+  aircrack-ng
 
-  # Music and entertainment
-  spotify
+  # Wordlists
+  rockyou
+  seclists
 ]
