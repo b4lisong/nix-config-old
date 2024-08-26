@@ -4,7 +4,6 @@
 > Check out the [original from dustinlyons](https://github.com/dustinlyons/nixos-config) instead.
 
 ### TODO:
-- [ ] Merge orbstack-testing branch
 - [ ] Homebrew taps, can we define in just one place instead of two?
 - [ ] Clean up and remove parts from original fork we aren't using
 - [ ] enable x86-64 Nix packages
@@ -75,5 +74,5 @@ nix run .#build-switch
 > [!NOTE]
 > If you needed to rename `/etc/nix/nix.conf` to `/etc/nix/nix.conf.before-nix-darwin`, the first build command needs to be:
 >
-> `nix --extra-experimental-features nix-command --extra-experimental-features flakes run .#build-switch`
+> `nix --extra-experimental-features 'nix-command flakes' run .#build-switch`
 
