@@ -55,7 +55,7 @@ in
       cleanup = "zap";
       upgrade = true;
     };
-    taps = [ "homebrew/cask" "nikitabobko/tap" ]; # must be defined here to avoid untap warning
+    taps = [ "homebrew/cask" "homebrew/services" "nikitabobko/tap" ]; # must be defined here to avoid untap warning
     # `brew install`
     brews = [
       "prometheus"
