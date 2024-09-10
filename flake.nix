@@ -26,6 +26,10 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     }; 
+    homebrew-services = {
+      url = "github:homebrew/homebrew-services";
+      flake = false;
+    };
     # for AeroSpace
     nikitabobko-tap = {
       url = "github:nikitabobko/homebrew-tap";
@@ -49,6 +53,7 @@
     homebrew-bundle,
     homebrew-core,
     homebrew-cask,
+    homebrew-services,
     nikitabobko-tap, # for AeroSpace
     mac-app-util,
     home-manager,
@@ -126,6 +131,7 @@
                   "homebrew/homebrew-core" = homebrew-core;
                   "homebrew/homebrew-cask" = homebrew-cask;
                   "homebrew/homebrew-bundle" = homebrew-bundle;
+                  "homebrew/homebrew-services" = homebrew-services;
                   # AeroSpace
                   "nikitabobko/homebrew-tap" = nikitabobko-tap;
                 };
