@@ -255,6 +255,22 @@
         "type": "github"
       }
     },
+    "homebrew-services": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1725894642,
+        "narHash": "sha256-YlVgmYcEDI/nCdWQmPNAsYQZLJpx7RHz1awPmmnFRa8=",
+        "owner": "homebrew",
+        "repo": "homebrew-services",
+        "rev": "b51a12730378ab4fcc8012bec8eb07d94f98e228",
+        "type": "github"
+      },
+      "original": {
+        "owner": "homebrew",
+        "repo": "homebrew-services",
+        "type": "github"
+      }
+    },
     "mac-app-util": {
       "inputs": {
         "cl-nix-lite": "cl-nix-lite",
@@ -433,6 +449,7 @@
         "homebrew-bundle": "homebrew-bundle",
         "homebrew-cask": "homebrew-cask",
         "homebrew-core": "homebrew-core",
+        "homebrew-services": "homebrew-services",
         "mac-app-util": "mac-app-util",
         "nikitabobko-tap": "nikitabobko-tap",
         "nix-homebrew": "nix-homebrew",
