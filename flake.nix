@@ -108,6 +108,15 @@
       apps = nixpkgs.lib.genAttrs linuxSystems mkLinuxApps // nixpkgs.lib.genAttrs darwinSystems mkDarwinApps;
 
       darwinConfigurations = nixpkgs.lib.genAttrs darwinSystems (system:
+        let
+          # patch for homebrew-services
+          # https://github.com/zhaofengli/nix-homebrew/issues/13#issuecomment-2156223912
+          homebrew-services-patched = nixpkgs.legacyPackages."${system}".applyPatches {
+            name = "homebrew-services-patched";
+            src = homebrew-services;
+            patches = [./patches/homebrew-services_x86-64.patch];
+          };
+        in
         darwin.lib.darwinSystem {
           inherit system;
           specialArgs = inputs;
@@ -131,7 +140,7 @@
                   "homebrew/homebrew-core" = homebrew-core;
                   "homebrew/homebrew-cask" = homebrew-cask;
                   "homebrew/homebrew-bundle" = homebrew-bundle;
-                  "homebrew/homebrew-services" = homebrew-services;
+                  "homebrew/homebrew-services" = homebrew-services-patched;
                   # AeroSpace
                   "nikitabobko/homebrew-tap" = nikitabobko-tap;
                 };
