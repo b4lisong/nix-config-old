@@ -1,163 +1,110 @@
+# glory to ryan4yin/nix-config
 {
-  description = "Starter Configuration with secrets for MacOS and NixOS";
+  # one config to rule them all
+  description = "b4lisong's nixos empire";
+
+  outputs = inputs: import ./outputs inputs;
+
+  # This is the standard format for flake.nix. `inputs` are the dependencies of the flake,
+  # Each item in `inputs` will be passed as a parameter to the `outputs` function after being pulled and built.
   inputs = {
+    # There are many ways to reference flake inputs. The most widely used is github:owner/name/reference,
+    # which represents the GitHub repository URL + branch/commit-id/tag.
+
+    # Official NixOS package source, using nixos's unstable branch by default
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    agenix.url = "github:ryantm/agenix";
-    home-manager.url = "github:nix-community/home-manager";
-    darwin = {
-      url = "github:LnL7/nix-darwin/master";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable-small";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
+
+    # TODO: enable macos support
+    ## for macos
+    #nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-24.05-darwin";
+    #nix-darwin = {
+    #  url = "github:lnl7/nix-darwin";
+    #  inputs.nixpkgs.follows = "nixpkgs-darwin";
+    #};
+    #nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
+    # home-manager, used for managing user configuration
+    home-manager = {
+      url = "github:nix-community/home-manager/master";
+      # url = "github:nix-community/home-manager/release-24.05";
+
+      # The `follows` keyword in inputs is used for inheritance.
+      # Here, `inputs.nixpkgs` of home-manager is kept consistent with the `inputs.nixpkgs` of the current flake,
+      # to avoid problems caused by different versions of nixpkgs dependencies.
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-homebrew = {
-      url = "github:zhaofengli-wip/nix-homebrew";
+
+    # generate iso/qcow2/docker/... image from nixos configuration
+    nixos-generators = {
+      url = "github:nix-community/nixos-generators";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
-    ## Declarative homebrew taps
-    ## Remember to include in:
-    ## outputs = ... and nix-hombrew.taps
-    homebrew-bundle = {
-      url = "github:homebrew/homebrew-bundle";
-      flake = false;
+
+    # agenix secrets management
+    agenix = {
+      # using original agenix for now
+      ## lock with git commit at 0.15.0
+      ## url = "github:ryantm/agenix/564595d0ad4be7277e07fa63b5a991b3c645655d";
+      ## replaced with a type-safe reimplementation to get a better error message and less bugs.
+      #url = "github:ryan4yin/ragenix";
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
-    homebrew-core = {
-      url = "github:homebrew/homebrew-core";
-      flake = false;
-    };
-    homebrew-cask = {
-      url = "github:homebrew/homebrew-cask";
-      flake = false;
-    }; 
-    homebrew-services = {
-      url = "github:homebrew/homebrew-services";
-      flake = false;
-    };
-    # for AeroSpace
-    nikitabobko-tap = {
-      url = "github:nikitabobko/homebrew-tap";
-      flake = false;
-    };
-    # Launch Nix-installed apps from Spotlight, etc.
-    mac-app-util.url = "github:hraban/mac-app-util";
+
     disko = {
-      url = "github:nix-community/disko";
+      url = "github:nix-community/disko/v1.6.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    secrets = {
-      url = "git+ssh://git@github.com/b4lisong/nix-secrets.git";
-      flake = false;
+
+    # add git hooks to format nix code before commit
+    pre-commit-hooks = {
+      url = "github:cachix/pre-commit-hooks.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
-  };
-  outputs = {
-    self,
-    darwin,
-    nix-homebrew,
-    homebrew-bundle,
-    homebrew-core,
-    homebrew-cask,
-    homebrew-services,
-    nikitabobko-tap, # for AeroSpace
-    mac-app-util,
-    home-manager,
-    nixpkgs,
-    disko,
-    agenix,
-    secrets 
-  } @inputs:
-    let
-      user = "balisong";
-      linuxSystems = [ "x86_64-linux" "aarch64-linux" ];
-      darwinSystems = [ "aarch64-darwin" "x86_64-darwin" ];
-      forAllSystems = f: nixpkgs.lib.genAttrs (linuxSystems ++ darwinSystems) f;
-      devShell = system: let pkgs = nixpkgs.legacyPackages.${system}; in {
-        default = with pkgs; mkShell {
-          nativeBuildInputs = with pkgs; [ bashInteractive git age age-plugin-yubikey ];
-          shellHook = with pkgs; ''
-            export EDITOR=vim
-          '';
-        };
-      };
-      mkApp = scriptName: system: {
-        type = "app";
-        program = "${(nixpkgs.legacyPackages.${system}.writeScriptBin scriptName ''
-          #!/usr/bin/env bash
-          PATH=${nixpkgs.legacyPackages.${system}.git}/bin:$PATH
-          echo "Running ${scriptName} for ${system}"
-          exec ${self}/apps/${system}/${scriptName}
-        '')}/bin/${scriptName}";
-      };
-      mkLinuxApps = system: {
-        "apply" = mkApp "apply" system;
-        "build-switch" = mkApp "build-switch" system;
-        "copy-keys" = mkApp "copy-keys" system;
-        "create-keys" = mkApp "create-keys" system;
-        "check-keys" = mkApp "check-keys" system;
-        "install" = mkApp "install" system;
-        "install-with-secrets" = mkApp "install-with-secrets" system;
-      };
-      mkDarwinApps = system: {
-        "apply" = mkApp "apply" system;
-        "build" = mkApp "build" system;
-        "build-switch" = mkApp "build-switch" system;
-        "copy-keys" = mkApp "copy-keys" system;
-        "create-keys" = mkApp "create-keys" system;
-        "check-keys" = mkApp "check-keys" system;
-        "rollback" = mkApp "rollback" system;
-      };
-    in
-    {
-      devShells = forAllSystems devShell;
-      apps = nixpkgs.lib.genAttrs linuxSystems mkLinuxApps // nixpkgs.lib.genAttrs darwinSystems mkDarwinApps;
 
-      darwinConfigurations = nixpkgs.lib.genAttrs darwinSystems (system:
-        darwin.lib.darwinSystem {
-          inherit system;
-          specialArgs = inputs;
-          modules = [
-            mac-app-util.darwinModules.default
-            home-manager.darwinModules.home-manager
-            (
-              { pkgs, config, inputs, ... }:
-              {
-                home-manager.sharedModules = [
-                  mac-app-util.homeManagerModules.default
-                ];
-              }
-            )
-            nix-homebrew.darwinModules.nix-homebrew
-            {
-              nix-homebrew = {
-                inherit user;
-                enable = true;
-                taps = {
-                  "homebrew/homebrew-core" = homebrew-core;
-                  "homebrew/homebrew-cask" = homebrew-cask;
-                  "homebrew/homebrew-bundle" = homebrew-bundle;
-                  "homebrew/homebrew-services" = homebrew-services;
-                  # AeroSpace
-                  "nikitabobko/homebrew-tap" = nikitabobko-tap;
-                };
-                mutableTaps = false;
-                autoMigrate = true;
-              };
-            }
-            ./hosts/darwin
-          ];
-        }
-      );
+    # TODO: enable nuenv later
+    #nuenv.url = "github:DeterminateSystems/nuenv";
 
-      nixosConfigurations = nixpkgs.lib.genAttrs linuxSystems (system: nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = inputs;
-        modules = [
-          home-manager.nixosModules.home-manager {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.${user} = import ./modules/nixos/home-manager.nix;
-              backupFileExtension = "backup";
-            };
-          }
-          ./hosts/nixos
-        ];
-     });
+    haumea = {
+      url = "github:nix-community/haumea/v0.2.2";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # TODO: enable nixpak later
+    #nixpak = {
+    #  url = "github:nixpak/nixpak";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
+
+    ########################  Some non-flake repositories  #########################################
+
+    # TODO: enable polybar-themes later
+    #polybar-themes = {
+    #  url = "github:adi1090x/polybar-themes";
+    #  flake = false;
+    #};
+
+    ########################  My own repositories  #########################################
+
+    # my private secrets, it's a private repository, you need to replace it with your own.
+    # use ssh protocol to authenticate via ssh-agent/ssh-key, and shallow clone to save time
+    # TODO: enable mysecrets later
+    #mysecrets = {
+    #  url = "git+ssh://git@github.com/b4lisong/nix-secrets.git?shallow=1";
+    #  flake = false;
+    #};
+
+    # TODO: enable wallpapers later
+    ## my wallpapers
+    #wallpapers = {
+    #  url = "github:ryan4yin/wallpapers";
+    #  flake = false;
+    #};
+
+    # TODO: enable nur later?
+    #nur-ryan4yin.url = "github:ryan4yin/nur-packages";
+    #nur-ataraxiasjel.url = "github:AtaraxiaSjel/nur";
   };
 }
