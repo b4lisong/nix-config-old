@@ -308,7 +308,7 @@ let name = "JL Mitra";
       {
         plugin = power-theme;
         extraConfig = ''
-           set -g @tmux_power_theme 'gold'
+           set -g @tmux_power_theme 'default'
         '';
       }
       {
