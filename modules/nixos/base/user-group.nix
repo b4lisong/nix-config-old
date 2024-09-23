@@ -3,6 +3,9 @@
   config,
   ...
 }: {
+  # Don't require password for sudo
+  security.sudo.wheelNeedsPassword = false;
+
   # Don't allow mutation of users outside the config.
   users.mutableUsers = false;
 
