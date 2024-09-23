@@ -42,4 +42,7 @@
 
   # replace default editor with neovim
   environment.variables.EDITOR = "nvim";
+
+  # enable zsh system-wide
+  programs.zsh.enable = true;
 }
