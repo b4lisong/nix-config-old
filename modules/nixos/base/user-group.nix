@@ -1,10 +1,14 @@
 {
   myvars,
   config,
+  pkgs,
   ...
 }: {
   # Don't require password for sudo
   security.sudo.wheelNeedsPassword = false;
+
+  # Set default shell
+  users.defaultUserShell = pkgs.zsh;
 
   # Don't allow mutation of users outside the config.
   users.mutableUsers = false;
