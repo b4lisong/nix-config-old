@@ -11,5 +11,6 @@
     extraGroups = ["docker"];
     disableWorkspaceTrust = true;
     disableTelemetry = true;
+    disableGettingStartedOverride = true;
   };
 }
