@@ -119,9 +119,9 @@ let
       alt-shift-7 = 'move-node-to-workspace 7'
       alt-shift-8 = 'move-node-to-workspace 8'
       alt-shift-9 = 'move-node-to-workspace 9'
-      #alt-shift-0 = 'move-node-to-workspace 0' # this is the secondary monitor, usually
       
-      alt-shift-0 = 'focus-monitor --wrap-around next'
+      # Shift focus to next monitor
+      alt-0 = 'focus-monitor --wrap-around next'
       
       alt-shift-c = 'reload-config'
       
