@@ -83,9 +83,10 @@ let user = "balisong"; in
         show-process-indicators = true;
         show-recents = false;
         launchanim = true;
-        orientation = "bottom";
+        orientation = "right";
         tilesize = 48;
         mru-spaces = false;
+        wvous-bl-corner = 13; # hot corner, bottom-left: lock screen
       };
 
       finder = {

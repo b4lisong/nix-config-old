@@ -173,7 +173,7 @@ in
         #  section = "others";
         #}
         {
-          path = "${config.users.users.${user}.home}/.local/share/";
+          path = "${config.users.users.${user}.home}/SKS/Attachments";
           section = "others";
           options = "--sort name --view grid --display folder";
         }
