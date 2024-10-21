@@ -86,7 +86,6 @@ let user = "balisong"; in
         orientation = "right";
         tilesize = 48;
         mru-spaces = false;
-        wvous-bl-corner = 13; # hot corner, bottom-left: lock screen
       };
 
       finder = {
