@@ -41,4 +41,5 @@ shared-packages ++ [
   python39Packages.virtualenv
   # IDE & Editor
   vscode
+  glow
 ]
