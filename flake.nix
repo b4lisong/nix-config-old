@@ -16,6 +16,11 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable-small";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
 
+    #TODO: implement lanzaboote for secure boot
+
+    # impermanence
+    impermanence.url = "github:nix-community/impermanence";
+    
     # TODO: enable macos support
     ## for macos
     #nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-24.05-darwin";
