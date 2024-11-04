@@ -1,10 +1,9 @@
-{pkgs, ...}:
-pkgs.stdenvNoCC.mkDerivation {
-  name = "brcm-firmware";
-  nativeBuildInputs = with pkgs; [gnutar xz];
-  buildCommand = ''
-    dir="$out/lib/"
-    mkdir -p "$dir"
-    tar -axvf ${./firmware.tar.xz} -C "$dir"
-  '';
-}
+{pkgs, ...}: 
+    (pkgs.stdenvNoCC.mkDerivation (final: {
+       name = "brcm-firmware";
+       src = ./firmware/brcm;
+       installPhase = ''
+         mkdir -p $out/lib/firmware/brcm
+         cp ${final.src}/* "$out/lib/firmware/brcm"
+       '';
+     }))
