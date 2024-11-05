@@ -22,8 +22,7 @@ in {
     ./impermanence.nix
   ];
 
-  boot.kernelModules = ["kvm-amd"];
-  boot.extraModprobeConfig = "options kvm_amd nested=1"; # for amd cpu
+  boot.extraModprobeConfig = "options kvm_intel nested=1";
 
   networking = {
     inherit hostName;

@@ -1,4 +1,4 @@
-# inspired by 
+# inspired by
 # ryan4yin/nix-config/outputs/x86_64-linux/src/idols-aquamarine.nix
 # ryan4yin/nix-config/outputs/x86_64-linux/src/12kingdoms-shoukei.nix
 {
@@ -15,7 +15,7 @@
 } @ args: let
   # remote development VM (in Proxmox VE)
   name = "a2251";
-  tags = [ "bm" "client" ];
+  tags = ["bm" "client"];
   ssh-user = "root";
 
   modules = {
@@ -24,7 +24,7 @@
         # common
         # TODO: add secrets
         # "secrets/nixos.nix"
-        "modules/nixos/server/server.nix"
+        "modules/nixos/desktop"
         # host specific
         "hosts/mbp-${name}"
       ])
@@ -36,7 +36,7 @@
         #{modules.secrets.server.storage.enable = true;}
       ];
     home-modules = map mylib.relativeToRoot [
-      "home/linux/tui.nix"
+      "home/linux/gui.nix"
       # host specific
       "hosts/mbp-${name}/home.nix"
     ];
