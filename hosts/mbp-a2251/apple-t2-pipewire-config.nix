@@ -75,6 +75,7 @@ in
     src = null;
     dontBuild = true;
     dontConfigure = true;
+    dontUnpack = true;
 
     installPhase = ''
       mkdir -p $out/share/alsa-card-profile/mixer/profile-sets/
