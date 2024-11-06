@@ -20,6 +20,8 @@ in {
     ./hardware-configuration.nix
     # putting impermanence config here instead
     ./impermanence.nix
+    # audio fix; source: https://wiki.t2linux.org/guides/audio-config/
+    ./t2-better-audio.nix
   ];
 
   boot.extraModprobeConfig = "options kvm_intel nested=1";
