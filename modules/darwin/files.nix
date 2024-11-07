@@ -122,6 +122,9 @@ let
       
       # Shift focus to next monitor
       alt-0 = 'focus-monitor --wrap-around next'
+
+      # Move node(window) to next monitor
+      alt-shift-0 = 'move-node-to-monitor --wrap-around next'
       
       alt-shift-c = 'reload-config'
       
