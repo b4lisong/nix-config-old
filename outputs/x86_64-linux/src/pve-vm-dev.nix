@@ -1,4 +1,4 @@
-# inspired by 
+# inspired by
 # ryan4yin/nix-config/outputs/x86_64-linux/src/idols-aquamarine.nix
 # ryan4yin/nix-config/outputs/x86_64-linux/src/12kingdoms-shoukei.nix
 {
@@ -15,7 +15,7 @@
 } @ args: let
   # remote development VM (in Proxmox VE)
   name = "dev";
-  tags = [ "vm" "bh" "pve" "railyard" ];
+  tags = ["vm" "bh" "pve" "railyard"];
   ssh-user = "root";
 
   modules = {
@@ -26,6 +26,7 @@
         # "secrets/nixos.nix"
         "modules/nixos/server/server.nix"
         "modules/nixos/server/pve-vm-hardware-configuration.nix"
+        "modules/nixos/server/kmscon.nix"
         # host specific
         "hosts/pve-vm-${name}"
       ])
@@ -50,5 +51,5 @@ in {
   #  mylib.colmenaSystem (systemArgs // {inherit tags ssh-user;});
 
   #packages.${name} = inputs.self.nixosConfigurations.${name}.config.formats.kubevirt;
-  packages.${name} = inputs.self.nixosConfigurations.${name}.config.formats.qcow;  # for Proxmox VE  
+  packages.${name} = inputs.self.nixosConfigurations.${name}.config.formats.qcow; # for Proxmox VE
 }
