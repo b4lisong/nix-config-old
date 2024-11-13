@@ -7,9 +7,13 @@
     # including full unicode support, and when the video card supports drm should be much faster.
     enable = true;
     fonts = [
+      #{
+      #  name = "Source Code Pro";
+      #  package = pkgs.source-code-pro;
+      #}
       {
-        name = "Source Code Pro";
-        package = pkgs.source-code-pro;
+        name = "SauceCodePro Nerd Font Mono";
+        package = pkgs.nerdfonts;
       }
     ];
     extraOptions = "--term xterm-256color";
