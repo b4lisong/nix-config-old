@@ -12,8 +12,8 @@
       #  package = pkgs.source-code-pro;
       #}
       {
-        name = "SauceCodePro Nerd Font Mono";
-        package = pkgs.nerdfonts;
+        name = "Inconsolata Nerd Font Mono";
+        package = pkgs.inconsolata-nerdfont;
       }
     ];
     extraOptions = "--term xterm-256color";
