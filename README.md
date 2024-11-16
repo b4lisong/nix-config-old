@@ -1,3 +1,4 @@
+# archiving this config and forking https://github.com/ryan4yin/nix-config instead
 > [!NOTE]
 > This fork isn't really meant for public consumption (yet).
 >
